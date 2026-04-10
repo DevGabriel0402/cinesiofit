@@ -54,7 +54,7 @@ export const MUSCLES = [
     plane: 'Frontal',
     exercises: [
       { name: 'Encolhimento', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/04/Dumbbell-Shrug.gif', isRealGif: true },
-      { name: 'Remada Alta', gif: 'https://image.tuasaude.com/media/article/yg/rt/remada_75620.gif?width=686&height=487', isRealGif: true }
+      { name: 'Remada Alta', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2022/11/barbell-uprightrow.gif', isRealGif: true }
     ]
   },
   // Ereto Espinhal
