@@ -1,4 +1,15 @@
 import dorsaisImg from './assets/dorsais.png';
+import peitoralImg from './assets/peitoral.png';
+import trapezioImg from './assets/trapezio.png';
+import eretoEspinhaImg from './assets/ereto_espinha.png';
+import abdomenImg from './assets/abdomen.png';
+import deltoideImg from './assets/deltoide.png';
+import bicepsBraquialImg from './assets/biceps_braquial.png';
+import tricepsBraquialImg from './assets/triceps_braquial.png';
+import quadricepsImg from './assets/quadriceps.png';
+import isquiotibiaisImg from './assets/isquiotibiais.png';
+import gluteosImg from './assets/gluteos.png';
+import panturrilhasImg from './assets/panturrilhas.png';
 
 export const MUSCLES = [
   // Peitoral
@@ -6,7 +17,7 @@ export const MUSCLES = [
     id: 'peitoral',
     name: 'Peitoral',
     region: 'Tronco (Peito)',
-    image: 'https://thumbs.dreamstime.com/b/caixa-muscles-pectoralis-principal-e-menor-iso-dos-m%C3%BAsculos-da-anatomia-71503436.jpg',
+    image: peitoralImg,
     composition: 'Peitoral maior (cobre a maior parte do peito) e peitoral menor (fica sob o maior).',
     action: 'Flexão horizontal, adução e rotação medial do braço.',
     plane: 'Transversal e Frontal',
@@ -37,7 +48,7 @@ export const MUSCLES = [
     id: 'trapezio',
     name: 'Trapézio',
     region: 'Tronco (Costas / Cervical)',
-    image: 'https://cdn.prod.website-files.com/64dd05b33f019f79a7ec8f43/66d9bcbfa7bd15ece435d75f_AD_4nXe9h65OjUPORQ8PlwxcDjjcM_FUr032K3MvqzLQY0zpmbYqwTcBe0xg2TKwsAjvNXUlnBhJES0RwcAA5ig1aS88M3ccqBT01J0mzyxeHgl6rpIVCFwdk3PCI33xwwfNl_wwxMnthnoPCd9UUp2hV5RMy7Vh.jpeg',
+    image: trapezioImg,
     composition: 'Dividido em porção superior, média e inferior.',
     action: 'Elevação, retração (adução) e depressão das escápulas.',
     plane: 'Frontal',
@@ -51,7 +62,7 @@ export const MUSCLES = [
     id: 'ereto_espinha',
     name: 'Eretores da Espinha',
     region: 'Tronco (Lombar e coluna)',
-    image: 'https://media.istockphoto.com/id/2020231747/pt/foto/the-erector-spinae-or-spinal-erectors-is-a-set-of-muscles-that-straighten-and-rotate-the-back.jpg?s=612x612&w=0&k=20&c=clf8tT3-iy73d-5kt8L0yM1ZSP-IoTAqwAjQtaV7bdQ=',
+    image: eretoEspinhaImg,
     composition: 'Conjunto de músculos profundos ao longo da coluna, incluindo o iliocostal, longuíssimo e espinal.',
     action: 'Extensão e estabilização da coluna vertebral.',
     plane: 'Sagital',
@@ -65,7 +76,7 @@ export const MUSCLES = [
     id: 'abdomen',
     name: 'Abdômen',
     region: 'Tronco (Core)',
-    image: 'https://www.corridaperfeita.com/wp-content/uploads/2019/07/4-1.jpg',
+    image: abdomenImg,
     composition: 'Reto abdominal ("gominhos"), oblíquos externos, oblíquos internos e o transverso do abdômen (camada profunda/cinta natural).',
     action: 'Flexão, rotação e estabilização do tronco e pelve.',
     plane: 'Múltiplos Planos',
@@ -80,7 +91,7 @@ export const MUSCLES = [
     id: 'deltoide',
     name: 'Deltoides',
     region: 'Braços e Ombros',
-    image: 'https://thumbs.dreamstime.com/b/anatomia-dos-m%C3%BAsculos-deltoides-os-comumente-conhecidos-como-ou-delts-s%C3%A3o-um-grupo-de-tr%C3%AAs-localizados-na-regi%C3%A3o-do-ombro-284957099.jpg',
+    image: deltoideImg,
     composition: 'Dividem-se em porção anterior, porção lateral (ou média) e porção posterior.',
     action: 'Anterior: Flexão. Médio: Abdução. Posterior: Extensão horizontal.',
     plane: 'Múltiplos Planos',
@@ -95,7 +106,7 @@ export const MUSCLES = [
     id: 'biceps_braquial',
     name: 'Bíceps e Flexores',
     region: 'Braços e Ombros',
-    image: 'https://mygreatness.com/wp-content/uploads/2021/02/Biceps960x540.jpg',
+    image: bicepsBraquialImg,
     composition: 'Bíceps braquial (cabeça longa e curta). Auxiliado pelo músculo braquial e braquiorradial.',
     action: 'Flexão do cotovelo e supinação do antebraço.',
     plane: 'Sagital e Transversal',
@@ -110,7 +121,7 @@ export const MUSCLES = [
     id: 'triceps_braquial',
     name: 'Tríceps',
     region: 'Braços e Ombros',
-    image: 'https://thumbs.dreamstime.com/b/anatomia-dos-m%C3%BAsculos-triceps-os-brachii-vulgarmente-conhecidos-como-s%C3%A3o-um-grupo-de-tr%C3%AAs-localizados-na-parte-posterior-do-284958664.jpg',
+    image: tricepsBraquialImg,
     composition: 'Tríceps braquial (dividido em cabeça longa, cabeça lateral e cabeça medial).',
     action: 'Extensão do cotovelo. (Porção longa auxilia na extensão do ombro).',
     plane: 'Sagital',
@@ -125,7 +136,7 @@ export const MUSCLES = [
     id: 'quadriceps',
     name: 'Quadríceps',
     region: 'Membros Inferiores (Anterior)',
-    image: 'https://media.istockphoto.com/id/1125710206/pt/foto/upper-legs-muscles-anatomy.jpg?s=612x612&w=0&k=20&c=p0L6urgErndITrxWV29rwwHcimztL02RdW3leCE8AvE=',
+    image: quadricepsImg,
     composition: 'Formado por quatro músculos: reto femoral, vasto lateral, vasto medial e vasto intermédio.',
     action: 'Extensão do joelho. (O reto femoral também faz flexão do quadril).',
     plane: 'Sagital',
@@ -140,7 +151,7 @@ export const MUSCLES = [
     id: 'isquiotibiais',
     name: 'Isquiotibiais (Posterior)',
     region: 'Membros Inferiores',
-    image: 'https://pbs.twimg.com/media/EhVLuiIWkAEbIQZ.jpg',
+    image: isquiotibiaisImg,
     composition: 'Compostos pelo bíceps femoral, semitendinoso e semimembranoso.',
     action: 'Flexão do joelho e extensão do quadril.',
     plane: 'Sagital',
@@ -154,7 +165,7 @@ export const MUSCLES = [
     id: 'gluteos',
     name: 'Glúteos',
     region: 'Membros Inferiores e Pelve',
-    image: 'https://blogpilates.com.br/wp-content/uploads/2020/06/fortalecimento-de-gluteos-anatomia.jpg',
+    image: gluteosImg,
     composition: 'Divididos em glúteo máximo (maior e superficial), glúteo médio e glúteo mínimo.',
     action: 'Extensão, abdução e rotação do quadril.',
     plane: 'Sagital, Frontal e Transversal',
@@ -163,12 +174,12 @@ export const MUSCLES = [
       { name: 'Glúteo na Polia', gif: 'https://placehold.co/400x300/fef2f2/dc2626?text=Glúteo+na+Polia' }
     ]
   },
-  // Gluteos
+  // Panturrilhas
   {
     id: 'panturrilhas',
     name: 'Tríceps Sural (Panturrilha)',
     region: 'Membros Inferiores (Perna)',
-    image: 'https://i.ytimg.com/vi/kdlSW7rwT_I/maxresdefault.jpg',
+    image: panturrilhasImg,
     composition: 'Composto pelo gastrocnêmio (cabeça medial e lateral) e o sóleo (músculo mais profundo).',
     action: 'Flexão plantar do tornozelo. (Gastrocnêmio auxilia na flexão do joelho).',
     plane: 'Sagital',
