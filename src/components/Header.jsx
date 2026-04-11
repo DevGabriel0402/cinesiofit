@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Dumbbell, Activity, Layers, Move, BookOpen } from 'lucide-react';
+import { Dumbbell, Activity, Layers, Move, BookOpen, Building } from 'lucide-react';
 
 const HeaderContainer = styled.header`
   background: linear-gradient(135deg, ${({ theme }) => theme.colors.primaryDark} 0%, ${({ theme }) => theme.colors.primary} 100%);
@@ -179,6 +179,9 @@ export const Header = ({ activeTab, setActiveTab }) => {
           </NavItem>
           <NavItem $active={activeTab === 'movements'} onClick={() => setActiveTab('movements')}>
             <Move size={16} /> Movimentos
+          </NavItem>
+          <NavItem $active={activeTab === 'pratique'} onClick={() => setActiveTab('pratique')}>
+            <Building size={16} /> Pratique Fit
           </NavItem>
         </NavList>
       </ContentWrapper>

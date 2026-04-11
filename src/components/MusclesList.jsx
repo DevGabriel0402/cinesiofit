@@ -17,6 +17,7 @@ const SearchIconWrapper = styled.div`
   position: absolute;
   inset-y: 0;
   left: 0;
+  top: 12px;
   padding-left: 1rem;
   display: flex;
   align-items: center;
@@ -105,10 +106,10 @@ export const MusclesList = ({ muscles, searchTerm, setSearchTerm, onSelectMuscle
       <Grid>
         {muscles.length > 0 ? (
           muscles.map(muscle => (
-            <MuscleCard 
-              key={muscle.id} 
-              muscle={muscle} 
-              onClick={() => onSelectMuscle(muscle)} 
+            <MuscleCard
+              key={muscle.id}
+              muscle={muscle}
+              onClick={() => onSelectMuscle(muscle)}
             />
           ))
         ) : (

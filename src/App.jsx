@@ -11,6 +11,7 @@ import { Planes } from './components/Planes';
 import { Movements } from './components/Movements';
 import { EbookGenerator } from './components/pdf/EbookGenerator';
 import { SplashScreen } from './components/SplashScreen';
+import { PratiqueTab } from './components/PratiqueTab';
 
 const Main = styled.main`
   max-width: 1152px;
@@ -108,6 +109,8 @@ export default function App() {
         {activeTab === 'planes' && <Planes />}
 
         {activeTab === 'movements' && <Movements />}
+
+        {activeTab === 'pratique' && <PratiqueTab />}
 
         {activeTab === 'ebook' && <EbookGenerator />}
       </Main>
