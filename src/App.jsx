@@ -12,6 +12,10 @@ import { Movements } from './components/Movements';
 import { EbookGenerator } from './components/pdf/EbookGenerator';
 import { SplashScreen } from './components/SplashScreen';
 import { PratiqueTab } from './components/PratiqueTab';
+import { Quiz } from './components/Quiz';
+import { ExerciseCatalog } from './components/ExerciseCatalog';
+import { IslandMenu } from './components/IslandMenu';
+import { Activity, Layers, Move, Building } from 'lucide-react';
 
 const Main = styled.main`
   max-width: 1152px;
@@ -20,6 +24,43 @@ const Main = styled.main`
 
   @media (max-width: 768px) {
     padding-bottom: 6rem; /* Garante que o conteúdo não fique escondido sob a tabbar mobile */
+  }
+`;
+
+const SubNavList = styled.nav`
+  display: flex;
+  gap: 0.5rem;
+  background-color: ${({ theme }) => theme.colors.surface};
+  padding: 0.5rem;
+  border-radius: 100px;
+  overflow-x: auto;
+  box-shadow: ${({ theme }) => theme.shadows.sm};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  margin-bottom: 2rem;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const SubNavItem = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: ${({ $active, theme }) => ($active ? 'white' : theme.colors.textMuted)};
+  background-color: ${({ $active, theme }) => ($active ? theme.colors.primary : 'transparent')};
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ $active, theme }) => ($active ? theme.colors.primary : theme.colors.background)};
+    color: ${({ $active, theme }) => ($active ? 'white' : theme.colors.primary)};
   }
 `;
 
@@ -69,7 +110,8 @@ const Watermark = styled.a`
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
-  const [activeTab, setActiveTab] = useState('muscles');
+  const [activeTab, setActiveTab] = useState('atlas');
+  const [atlasSubTab, setAtlasSubTab] = useState('muscles');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedMuscle, setSelectedMuscle] = useState(null);
 
@@ -94,10 +136,32 @@ export default function App() {
         />
       )}
 
-      <Header activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Header 
+        activeTab={activeTab} 
+        setActiveTab={setActiveTab} 
+        atlasSubTab={atlasSubTab} 
+        setAtlasSubTab={setAtlasSubTab} 
+      />
 
       <Main>
-        {activeTab === 'muscles' && (
+        {activeTab === 'atlas' && (
+          <SubNavList>
+            <SubNavItem $active={atlasSubTab === 'muscles'} onClick={() => setAtlasSubTab('muscles')}>
+              <Activity size={16} /> Músculos
+            </SubNavItem>
+            <SubNavItem $active={atlasSubTab === 'planes'} onClick={() => setAtlasSubTab('planes')}>
+              <Layers size={16} /> Planos
+            </SubNavItem>
+            <SubNavItem $active={atlasSubTab === 'movements'} onClick={() => setAtlasSubTab('movements')}>
+              <Move size={16} /> Movimentos
+            </SubNavItem>
+            <SubNavItem $active={atlasSubTab === 'pratique'} onClick={() => setAtlasSubTab('pratique')}>
+              <Building size={16} /> Pratique Fit
+            </SubNavItem>
+          </SubNavList>
+        )}
+
+        {activeTab === 'atlas' && atlasSubTab === 'muscles' && (
           <MusclesList
             muscles={filteredMuscles}
             searchTerm={searchTerm}
@@ -105,15 +169,21 @@ export default function App() {
             onSelectMuscle={setSelectedMuscle}
           />
         )}
+        
+        {activeTab === 'atlas' && atlasSubTab === 'planes' && <Planes />}
+        
+        {activeTab === 'atlas' && atlasSubTab === 'movements' && <Movements />}
 
-        {activeTab === 'planes' && <Planes />}
+        {activeTab === 'atlas' && atlasSubTab === 'pratique' && <PratiqueTab />}
 
-        {activeTab === 'movements' && <Movements />}
+        {activeTab === 'catalog' && <ExerciseCatalog />}
 
-        {activeTab === 'pratique' && <PratiqueTab />}
+        {activeTab === 'quiz' && <Quiz />}
 
         {activeTab === 'ebook' && <EbookGenerator />}
       </Main>
+
+      <IslandMenu activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <Watermark
         href="https://wa.me/5531991660594?text=Ol%C3%A1%20Gabriel!%20Vim%20atrav%C3%A9s%20do%20aplicativo%20CinesioFit%20e%20gostaria%20de%20falar%20com%20voc%C3%AA."

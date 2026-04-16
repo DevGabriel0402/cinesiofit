@@ -119,6 +119,24 @@ const HeaderOverlay = styled.div`
   }
 `;
 
+const ModalImageLabel = styled.div`
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background-color: rgba(15, 23, 42, 0.8);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: ${({ theme }) => theme.radii.full};
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 5;
+`;
+
 const ScrollableContent = styled.div`
   padding: 1.5rem;
   overflow-y: auto;
@@ -297,6 +315,7 @@ export const MuscleDetailsModal = ({ muscle, onClose }) => {
 
         <HeaderArea>
           <img src={muscle.image} alt={muscle.name} />
+          <ModalImageLabel>{muscle.name}</ModalImageLabel>
           <HeaderOverlay>
             <h2>{muscle.name}</h2>
             <p><Activity size={16} /> {muscle.region}</p>

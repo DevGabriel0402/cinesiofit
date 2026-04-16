@@ -73,6 +73,27 @@ const RegionBadge = styled.span`
   letter-spacing: 0.5px;
 `;
 
+const MuscleLabelOverlay = styled.div`
+  position: absolute;
+  bottom: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(15, 23, 42, 0.75);
+  color: #f8fafc;
+  padding: 0.35rem 1rem;
+  border-radius: ${({ theme }) => theme.radii.full};
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  z-index: 2;
+  white-space: nowrap;
+  pointer-events: none;
+`;
+
 const ContentArea = styled.div`
   padding: 1.25rem;
   flex-grow: 1;
@@ -140,6 +161,7 @@ export const MuscleCard = ({ muscle, onClick }) => {
       <ImageArea>
         <img className="muscle-img" src={muscle.image} alt={`Anatomia do músculo ${muscle.name}`} />
         <RegionBadge>{muscle.region}</RegionBadge>
+        <MuscleLabelOverlay>{muscle.name}</MuscleLabelOverlay>
       </ImageArea>
 
       <ContentArea>

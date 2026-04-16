@@ -9,6 +9,10 @@ const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
   z-index: 10;
+
+  @media print {
+    display: none !important;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -139,7 +143,7 @@ const NavItem = styled.button`
     padding: 0.5rem;
     background-color: transparent !important;
     box-shadow: none !important;
-    color: ${({ $active, theme }) => ($active ? theme.colors.primary : theme.colors.textMuted)};
+    color: ${({ $active, theme }) => ($active ? theme.colors.primary : 'white')};
     font-size: 0.70rem;
     flex: 1;
 
@@ -152,7 +156,7 @@ const NavItem = styled.button`
   }
 `;
 
-export const Header = ({ activeTab, setActiveTab }) => {
+export const Header = ({ activeTab, atlasSubTab, setAtlasSubTab, setActiveTab }) => {
   return (
     <HeaderContainer>
       <ContentWrapper>
@@ -170,20 +174,6 @@ export const Header = ({ activeTab, setActiveTab }) => {
           </EbookButton>
         </TopBar>
 
-        <NavList>
-          <NavItem $active={activeTab === 'muscles'} onClick={() => setActiveTab('muscles')}>
-            <Activity size={16} /> Músculos
-          </NavItem>
-          <NavItem $active={activeTab === 'planes'} onClick={() => setActiveTab('planes')}>
-            <Layers size={16} /> Planos Anatômicos
-          </NavItem>
-          <NavItem $active={activeTab === 'movements'} onClick={() => setActiveTab('movements')}>
-            <Move size={16} /> Movimentos
-          </NavItem>
-          <NavItem $active={activeTab === 'pratique'} onClick={() => setActiveTab('pratique')}>
-            <Building size={16} /> Pratique Fit
-          </NavItem>
-        </NavList>
       </ContentWrapper>
     </HeaderContainer>
   );
