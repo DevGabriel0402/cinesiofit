@@ -34,12 +34,11 @@ const NavItem = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem ${({ $active }) => ($active ? '1.25rem' : '0.75rem')};
   border-radius: 999px;
   font-weight: 700;
   font-size: 0.95rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   color: ${({ $active, theme }) => $active ? 'white' : theme.colors.textMuted};
   background: ${({ $active, theme }) => $active ? theme.colors.primary : 'transparent'};
   border: none;
@@ -51,23 +50,31 @@ const NavItem = styled.button`
   }
   
   svg {
-    transition: transform 0.2s;
+    flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: ${({ $active }) => $active ? 'scale(1.1)' : 'scale(1)'};
   }
 
+  .label {
+    max-width: ${({ $active }) => ($active ? '200px' : '0')};
+    opacity: ${({ $active }) => ($active ? '1' : '0')};
+    margin-left: ${({ $active }) => ($active ? '0.5rem' : '0')};
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+  }
+
   @media (max-width: 768px) {
-    padding: 0.75rem;
-    border-radius: 50%;
-    aspect-ratio: 1;
-    flex: unset;
+    padding: 0.75rem ${({ $active }) => ($active ? '1rem' : '0.75rem')};
     
     .label {
-      display: none;
+      font-size: 0.8rem;
     }
 
     svg {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
     }
   }
 `;
