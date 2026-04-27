@@ -534,7 +534,7 @@ export const Quiz = () => {
     setQuizStage('setup');
   };
 
-  const categories = ['Todas', 'Pratique', 'Anatomia Muscular', 'Cinesiologia', 'Planos Anatômicos', 'Análise Biomecânica', 'Exercícios'];
+  const categories = ['Todas', 'Pratique', 'Anatomia Muscular', 'Cinesiologia', 'Planos Anatômicos', 'Análise Biomecânica', 'Exercícios', 'Anamnese', 'Bioenergética', 'Pulseira Verde'];
   const counts = [5, 10, 15, 20, 30, 'Todas'];
 
   if (quizStage === 'setup') {

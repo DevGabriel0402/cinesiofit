@@ -51,7 +51,7 @@ const SplashContainer = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 99999;
-  animation: ${({ isFadingOut }) => (isFadingOut ? fadeOut : 'none')} 0.5s ease-out forwards;
+  animation: ${({ $isFadingOut }) => ($isFadingOut ? fadeOut : 'none')} 0.5s ease-out forwards;
 `;
 
 const LogoWrapper = styled.div`
@@ -120,7 +120,7 @@ export function SplashScreen({ onComplete }) {
   }, [onComplete]);
 
   return (
-    <SplashContainer isFadingOut={isFadingOut}>
+    <SplashContainer $isFadingOut={isFadingOut}>
       <LogoWrapper>
         <Activity size={48} color="#ffffff" strokeWidth={2.5} />
       </LogoWrapper>

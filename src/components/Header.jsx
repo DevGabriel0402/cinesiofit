@@ -156,7 +156,7 @@ const NavItem = styled.button`
   }
 `;
 
-export const Header = ({ activeTab, atlasSubTab, setAtlasSubTab, setActiveTab }) => {
+export const Header = ({ setActiveTab }) => {
   return (
     <HeaderContainer>
       <ContentWrapper>

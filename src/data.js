@@ -24,10 +24,14 @@ export const MUSCLES = [
     exercises: [
       { name: 'Supino Reto', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Bench-Press.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro', 'Extensão de Cotovelo'] },
       { name: 'Supino Inclinado', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Barbell-Bench-Press.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro', 'Extensão de Cotovelo'] },
-      { name: 'Crucifixo', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2020/06/dumbbell-incline-fly.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro'] },
+      { name: 'Crucifixo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2019/11/03081301-crucifixo-com-halteres.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro'] },
       { name: 'Crossover', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/High-Cable-Crossover.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro'] },
       { name: 'Flexão de Braço', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/04/flexao-de-bracos.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro', 'Extensão de Cotovelo'] },
-      { name: 'Voador (Peck Deck)', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/voador-no-aparelho.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro'] }
+      { name: 'Voador (Peck Deck)', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/voador-no-aparelho.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro'] },
+      { name: 'Supino Inclinado (Halteres)', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/supino-inclinado-com-halteres.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro', 'Extensão de Cotovelo'] },
+      { name: 'Peck Deck (Voador)', gif: 'https://i.pinimg.com/originals/6d/99/ed/6d99ed8341629f7fc40eb361725d65dd.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro'] },
+      { name: 'Crucifixo Inclinado', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2020/06/dumbbell-incline-fly.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro'] },
+      { name: 'Supino Declinado', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2018/09/barbell-decline-bench-press.gif', isRealGif: true, plane: 'Transversal', movements: ['Adução Horizontal de Ombro', 'Extensão de Cotovelo'] }
     ]
   },
   // Dorsais
@@ -44,8 +48,16 @@ export const MUSCLES = [
       { name: 'Remada Curvada', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Bent-Over-Row.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro', 'Flexão de Cotovelo', 'Retração Escapular'] },
       { name: 'Barra Fixa', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Pull-up.gif', isRealGif: true, plane: 'Frontal', movements: ['Adução de Ombro', 'Flexão de Cotovelo'] },
       { name: 'Remada Baixa', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro', 'Flexão de Cotovelo', 'Retração Escapular'] },
-      { name: 'Pull-down', gif: 'https://i0.wp.com/omelhortreino.com.br/wp-content/uploads/2025/06/Pulldown-inclinado-com-corda.gif?resize=550%2C550&ssl=1', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro'] },
-      { name: 'Remada Unilateral', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Row.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro', 'Flexão de Cotovelo'] }
+      { name: 'Pull-down', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2024/09/pulldown-corda.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro'] },
+      { name: 'Remada Unilateral', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Row.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro', 'Flexão de Cotovelo'] },
+      { name: 'Remada Baixa (Mundo)', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/09/remada-sentado-com-cabos-e-triangulo-para-costas.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro', 'Flexão de Cotovelo'] },
+      { name: 'Remada Cavalinho', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/costas-remada-em-pe-com-barra-T.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro', 'Flexão de Cotovelo'] },
+      { name: 'Remada Unilateral (Serrote)', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/costas-remada-unilateral-com-halter-serrote-no-banco.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro', 'Flexão de Cotovelo'] },
+      { name: 'Pullover com Halter', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2018/10/pullover-com-halteres-no-banco-horizontal.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro'] },
+      { name: 'Barra Fixa Supinada', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2023/10/band-assisted-pullup.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Cotovelo', 'Extensão de Ombro'] },
+
+      { name: 'Puxada Braços Estendidos', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/puxada-com-bracos-estendidos.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro'] },
+      { name: 'Puxada Triângulo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/puxada-pulley-triangulo.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro', 'Flexão de Cotovelo'] }
     ]
   },
   // Trapézios
@@ -63,7 +75,10 @@ export const MUSCLES = [
       { name: 'Encolhimento com Barra', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2018/03/encolhimento-com-barra.gif', isRealGif: true, plane: 'Frontal', movements: ['Elevação de Escápula'] },
       { name: 'Encolhimento na Polia', gif: 'https://treinoemalta.com.br/wp-content/uploads/2023/07/Encolhimento-de-Ombros-na-Polia-Baixa.gif', isRealGif: true, plane: 'Frontal', movements: ['Elevação de Escápula'] },
       { name: 'Face Pull', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Face-Pull.gif', isRealGif: true, plane: 'Transversal', movements: ['Abdução Horizontal de Ombro', 'Rotação Externa de Ombro'] },
-      { name: 'Crucifixo Inverso', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/ombros-crucifixo-invertido-com-halteres.gif', isRealGif: true, plane: 'Transversal', movements: ['Abdução Horizontal de Ombro'] }
+      { name: 'Crucifixo Inverso (Halter)', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/ombros-crucifixo-invertido-com-halteres.gif', isRealGif: true, plane: 'Transversal', movements: ['Abdução Horizontal de Ombro'] },
+      { name: 'Encolhimento (Halter)', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2024/01/dumbbell-shrug.gif', isRealGif: true, plane: 'Frontal', movements: ['Elevação de Escápula'] },
+      { name: 'Crucifixo Inverso', gif: 'https://i0.wp.com/omelhortreino.com.br/wp-content/uploads/2025/06/Voador-invertido.gif?resize=550%2C550&ssl=1', isRealGif: true, plane: 'Transversal', movements: ['Abdução Horizontal de Ombro'] },
+      { name: 'Remada Alta (Cabo)', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/ombros-remada-alta-no-cabo.gif', isRealGif: true, plane: 'Frontal', movements: ['Elevação de Escápula', 'Abdução de Ombro'] },
     ]
   },
   // Ereto Espinhal
@@ -78,10 +93,7 @@ export const MUSCLES = [
     exercises: [
       { name: 'Banco Romano', gif: 'https://i0.wp.com/omelhortreino.com.br/wp-content/uploads/2025/07/Extensao-Lombar-com-Peso.gif?resize=550%2C550&ssl=1', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Tronco', 'Extensão de Quadril'] },
       { name: 'Levantamento Terra', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2024/09/smith-deadlift.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Quadril', 'Extensão de Joelho', 'Estabilização de Tronco (Isometria)'] },
-      { name: 'Bom Dia (Good Morning)', gif: 'https://fitnessprogramer.com/wp-content/uploads/2023/10/Dumbbell-Good-Morning.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Quadril', 'Extensão de Tronco'] },
-      { name: 'Super-homem (Superman)', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Superman.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Tronco', 'Extensão de Quadril'] },
-      { name: 'Extensão Lombar no Solo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/extensao-lombar-de-brucos.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Tronco'] },
-      { name: 'Perdigueiro (Bird Dog)', gif: 'https://i0.wp.com/omelhortreino.com.br/wp-content/uploads/2025/07/Quadrupede-com-elevacao-de-braco-e-perna-contralateral.gif?resize=550%2C550&ssl=1', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Tronco', 'Flexão de Ombro e Ext. Quadril'] }
+      { name: 'Extensão Lombar Solo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/extensao-lombar-de-brucos.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Tronco'] }
     ]
   },
   // Abdômen
@@ -95,11 +107,12 @@ export const MUSCLES = [
     plane: 'Múltiplos Planos',
     exercises: [
       { name: 'Abdominal Supra', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2017/09/abdominal-reto.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Tronco'] },
-      { name: 'Prancha Isométrica', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2019/02/prancha-musculos-envolvidos.jpg', isRealGif: true, plane: 'Sagital', movements: ['Anti-extensão de Tronco (Isometria)'] },
-      { name: 'Rotação Russa', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2023/07/46461301-abdominal-obliquo-rotacao-russa-de-quadri.gif', isRealGif: true, plane: 'Transversal', movements: ['Rotação de Tronco'] },
-      { name: 'Abdominal em V', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/04/abdominal-em-V-no-chao.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Tronco', 'Flexão de Quadril'] },
-      { name: 'Abdominal Bicicleta', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Bicycle-Crunch.gif', isRealGif: true, plane: 'Transversal e Sagital', movements: ['Flexão de Tronco', 'Rotação de Tronco'] },
-      { name: 'Abdominal Infra', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2019/04/abdominal-invertido-com-pernas-na-vertical.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Quadril', 'Retroversão Pélvica'] }
+      { name: 'Prancha Isométrica', gif: 'https://i.pinimg.com/736x/b5/14/49/b51449a70b867a88c43146f85f34a224.jpg', isRealGif: true, plane: 'Sagital', movements: ['Anti-extensão (Isometria)'] },
+      { name: 'Abdominal Bicicleta', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2024/08/abdominal-bicicleta.gif', isRealGif: true, plane: 'Transversal', movements: ['Flexão e Rotação'] },
+      { name: 'Abdominal Infra', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2024/12/abdominal-infra-solo2.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Quadril'] },
+      { name: 'Rolo Abdominal', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/03/abdominal-com-rolo-no-chao.gif', isRealGif: true, plane: 'Sagital', movements: ['Anti-extensão'] },
+      { name: 'Prancha Lateral', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/prancha-lateral.gif', isRealGif: true, plane: 'Frontal', movements: ['Isometria Lateral'] },
+
     ]
   },
   // Deltoides
@@ -112,120 +125,148 @@ export const MUSCLES = [
     action: 'Anterior: Flexão. Médio: Abdução. Posterior: Extensão horizontal.',
     plane: 'Múltiplos Planos',
     exercises: [
-      { name: 'Desenvolvimento', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/desenvolvimento-para-ombros-com-halteres.gif', isRealGif: true, plane: 'Frontal', movements: ['Abdução de Ombro', 'Extensão de Cotovelo'] },
+      { name: 'Desenvolvimento Halter', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/desenvolvimento-para-ombros-com-halteres.gif', isRealGif: true, plane: 'Frontal', movements: ['Abdução de Ombro'] },
       { name: 'Elevação Lateral', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/ombros-elevacao-lateral-de-ombros-com-halteres.gif', isRealGif: true, plane: 'Frontal', movements: ['Abdução de Ombro'] },
-      { name: 'Elevação Frontal', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2018/09/elevacao-frontal-com-anilha-v2.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Ombro'] },
-      { name: 'Desenvolvimento Arnold', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Arnold-Press.gif', isRealGif: true, plane: 'Frontal', movements: ['Abdução de Ombro', 'Rotação Externa de Ombro'] },
-      { name: 'Elevação Lateral na Polia', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Lateral-Raise.gif', isRealGif: true, plane: 'Frontal', movements: ['Abdução de Ombro'] },
-      { name: 'Desenvolvimento com Barra', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Barbell-Shoulder-Press.gif', isRealGif: true, plane: 'Frontal', movements: ['Abdução de Ombro', 'Extensão de Cotovelo'] }
+      { name: 'Elevação Frontal', gif: 'https://image.tuasaude.com/media/article/sz/nf/elevacao-frontal_75624.gif?width=686&height=487', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Ombro'] },
     ]
   },
   // Bíceps
   {
     id: 'biceps_braquial',
-    name: 'Bíceps e Flexores',
-    region: 'Braços e Ombros',
+    name: 'Bíceps',
+    region: 'Braços',
     image: bicepsBraquialImg,
-    composition: 'Bíceps braquial (cabeça longa e curta). Auxiliado pelo músculo braquial e braquiorradial.',
-    action: 'Flexão do cotovelo e supinação do antebraço.',
-    plane: 'Sagital e Transversal',
+    composition: 'Bíceps braquial e braquial.',
+    action: 'Flexão do cotovelo.',
+    plane: 'Sagital',
     exercises: [
       { name: 'Rosca Direta', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2022/09/rosca-biceps-direta-com-halteres.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Cotovelo'] },
-      { name: 'Rosca Scott', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/biceps-rosca-biceps-no-banco-scott-com-barra-W.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Cotovelo'] },
-      { name: 'Rosca Martelo', gif: 'https://media.tenor.com/8T_oLOn1XJwAAAAM/rosca-alternada-com-halteres.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Cotovelo (Neutro)'] },
-      { name: 'Rosca Concentrada', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Concentration-Curl.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Cotovelo'] },
-      { name: 'Rosca Inversa', gif: 'https://i0.wp.com/omelhortreino.com.br/wp-content/uploads/2025/04/Rosca-Inversa.gif?resize=550%2C550&ssl=1', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Cotovelo', 'Prono-supinação Isométrica'] },
-      { name: 'Rosca na Polia', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2019/04/rosca-direta-polia.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Cotovelo'] }
+      { name: 'Rosca Martelo', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2023/04/dumbbell-hammer-curl-v-2.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Cotovelo'] },
+      { name: 'Rosca Scott', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/11/Rosca-Scott-com-halteres-unilateral.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Cotovelo'] },
     ]
   },
   // Tríceps
   {
     id: 'triceps_braquial',
     name: 'Tríceps',
-    region: 'Braços e Ombros',
+    region: 'Braços',
     image: tricepsBraquialImg,
-    composition: 'Tríceps braquial (dividido em cabeça longa, cabeça lateral e cabeça medial).',
-    action: 'Extensão do cotovelo. (Porção longa auxilia na extensão do ombro).',
+    composition: 'Tríceps braquial (3 cabeças).',
+    action: 'Extensão do cotovelo.',
     plane: 'Sagital',
     exercises: [
-      { name: 'Tríceps Corda', gif: 'https://media.tenor.com/mbebKudZjxYAAAAM/tr%C3%ADceps-pulley.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Cotovelo'] },
-      { name: 'Tríceps Testa', gif: 'https://treinoemalta.com.br/wp-content/uploads/2023/07/Triceps-testa-na-Polia.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Cotovelo'] },
       { name: 'Tríceps Francês', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2025/01/triceps-frances-com-um-halter-sentado.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Cotovelo'] },
-      { name: 'Tríceps Pulley', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/07/triceps-puxada-no-pulley.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Cotovelo'] },
-      { name: 'Tríceps Coice', gif: 'https://karoldeliberato.com.br/wp-content/uploads/2023/05/image45.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Cotovelo'] },
-      { name: 'Mergulho no Banco', gif: 'https://fitnessprogramer.com/wp-content/uploads/2021/02/Bench-Dips.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Cotovelo', 'Extensão de Ombro'] }
+      { name: 'Tríceps Coice', gif: 'https://karoldeliberato.com.br/wp-content/uploads/2023/05/image68.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Cotovelo'] },
+      { name: 'Tríceps Supinado', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2022/01/00301301-supino-com-pegada-fechada.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Cotovelo'] }
     ]
   },
-  // Quadriceps
+  // Quadriceps e Adutores
   {
     id: 'quadriceps',
-    name: 'Quadríceps',
-    region: 'Membros Inferiores (Anterior)',
+    name: 'Quadríceps e Adutores',
+    region: 'Pernas',
     image: quadricepsImg,
-    composition: 'Formado por quatro músculos: reto femoral, vasto lateral, vasto medial e vasto intermédio.',
-    action: 'Extensão do joelho. (O reto femoral também faz flexão do quadril).',
-    plane: 'Sagital',
+    composition: 'Quadríceps (reto femoral, vastos) e Adutores (curto, longo, magno).',
+    action: 'Extensão de joelho e Adução de quadril.',
+    plane: 'Sagital e Frontal',
     exercises: [
-      { name: 'Agachamento Livre', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2023/07/bodyweight-squat.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho', 'Extensão de Quadril'] },
-      { name: 'Cadeira Extensora', gif: 'https://media.tenor.com/bqKtsSuqilQAAAAM/gym.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho'] },
-      { name: 'Leg Press 45º', gif: 'https://image.tuasaude.com/media/article/nb/le/leg-press_75589.gif?width=686&height=487', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho', 'Extensão de Quadril'] },
-      { name: 'Agachamento Hack', gif: 'https://i.pinimg.com/originals/a5/10/b7/a510b75341f3c63e528111c112f19817.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho', 'Extensão de Quadril'] },
-      { name: 'Passada (Avanço)', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2023/07/walking-lunge.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho', 'Extensão de Quadril'] },
-      { name: 'Agachamento Búlgaro', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2024/06/agachamento-bulgaro.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho', 'Extensão de Quadril'] }
+      { name: 'Agachamento Sumô', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/09/agachamento-sumo-com-halter.gif', isRealGif: true, plane: 'Sagital', movements: ['Adução e Extensão'] },
+      { name: 'Cadeira Adutora', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/04/pernas-aducao-de-pernas-na-maquina.gif', isRealGif: true, plane: 'Frontal', movements: ['Adução de Quadril'] },
+      { name: 'Agachamento Búlgaro', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2024/06/agachamento-bulgaro.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho'] },
+      { name: 'Hack Machine', gif: 'https://i.pinimg.com/originals/a5/10/b7/a510b75341f3c63e528111c112f19817.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho'] },
+      { name: 'Agachamento Smith', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2017/11/smith-full-squat.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho'] },
+      { name: 'Avanço Halteres', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/11/avanco-com-halteras.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho'] },
+      { name: 'Leg Press 45°', gif: 'https://fitnessprogramer.com/wp-content/uploads/2015/11/Leg-Press.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Joelho'] },
     ]
   },
   // Isquiotibiais
   {
     id: 'isquiotibiais',
-    name: 'Isquiotibiais (Posterior)',
-    region: 'Membros Inferiores',
+    name: 'Isquiotibiais',
+    region: 'Pernas',
     image: isquiotibiaisImg,
-    composition: 'Compostos pelo bíceps femoral, semitendinoso e semimembranoso.',
-    action: 'Flexão do joelho e extensão do quadril.',
+    composition: 'Bíceps femoral, semitendinoso e semimembranoso.',
+    action: 'Flexão de joelho e extensão de quadril.',
     plane: 'Sagital',
     exercises: [
-      { name: 'Mesa Flexora', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/04/pernas-flexao-de-pernas-na-maquina.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Joelho'] },
       { name: 'Stiff', gif: 'https://i.pinimg.com/originals/82/4d/fd/824dfd405284597cd20e8a55233e2d77.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Quadril'] },
       { name: 'Cadeira Flexora', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2024/12/cadeira-flexora.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Joelho'] },
-      { name: 'Flexor em Pé', gif: 'https://i.pinimg.com/originals/d9/ea/db/d9eadb96317b4a64eafb32ab0980d560.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Joelho'] },
-      { name: 'Stiff Unilateral', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2023/04/barbell-single-leg-deadlift.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Quadril'] },
-      { name: 'Bom Dia (Isquiotibiais)', gif: 'https://fitcron.com/wp-content/uploads/2021/04/00441301-Barbell-Good-Morning_Thighs_720.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Quadril'] }
+      { name: 'Mesa Flexora', gif: 'https://media.tenor.com/fj_cZPprAyMAAAAM/gym.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Joelho'] }
     ]
   },
-  // Gluteos
+  // Glúteos
   {
     id: 'gluteos',
     name: 'Glúteos',
-    region: 'Membros Inferiores e Pelve',
+    region: 'Pelve',
     image: gluteosImg,
-    composition: 'Divididos em glúteo máximo (maior e superficial), glúteo médio e glúteo mínimo.',
-    action: 'Extensão, abdução e rotação do quadril.',
-    plane: 'Sagital, Frontal e Transversal',
+    composition: 'Glúteo máximo, médio e mínimo.',
+    action: 'Extensão e Abdução de quadril.',
+    plane: 'Múltiplos',
     exercises: [
       { name: 'Elevação Pélvica', gif: 'https://treinoemalta.com.br/wp-content/uploads/2023/07/Elevacao-Pelvica.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Quadril'] },
-      { name: 'Glúteo na Polia', gif: 'https://i0.wp.com/meutreinador.com/wp-content/uploads/2023/12/60_Gluteos-no-Cabo-Posicao-Curvada.gif?fit=1080%2C1080&ssl=1', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Quadril'] },
-      { name: 'Agachamento Sumô', gif: 'https://i.pinimg.com/originals/2b/7d/97/2b7d9756a13784a67c2ece7d9980b6a9.gif', isRealGif: true, plane: 'Sagital e Frontal', movements: ['Extensão de Quadril', 'Extensão de Joelho', 'Adução de Quadril'] },
-      { name: 'Cadeira Abdutora', gif: 'https://i.pinimg.com/originals/4e/17/b8/4e17b88b6b11c54155939c0a5b3c3381.gif', isRealGif: true, plane: 'Frontal', movements: ['Abdução de Quadril'] },
       { name: 'Glúteo 4 Apoios', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/09/quatro-apoios-com-elevacao-da-perna.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Quadril'] },
-      { name: 'Afundo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/04/pernas-afundo-tradicional-sem-pesos-1.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Quadril', 'Extensão de Joelho'] }
+      { name: 'Coice no Cabo', gif: 'https://karoldeliberato.com.br/wp-content/uploads/2023/04/image32-1.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Quadril'] },
     ]
   },
   // Panturrilhas
   {
     id: 'panturrilhas',
-    name: 'Tríceps Sural (Panturrilha)',
-    region: 'Membros Inferiores (Perna)',
+    name: 'Panturrilhas',
+    region: 'Pernas',
     image: panturrilhasImg,
-    composition: 'Composto pelo gastrocnêmio (cabeça medial e lateral) e o sóleo (músculo mais profundo).',
-    action: 'Flexão plantar do tornozelo. (Gastrocnêmio auxilia na flexão do joelho).',
+    composition: 'Gastrocnêmio e sóleo.',
+    action: 'Flexão plantar.',
     plane: 'Sagital',
     exercises: [
-      { name: 'Gêmeos em Pé (Maquina)', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2023/03/lever-standing-calf-raise.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão Plantar de Tornozelo'] },
-      { name: 'Gêmeos Sentado', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2018/10/lever-seated-calf-raise-.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão Plantar de Tornozelo'] },
-      { name: 'Flexão Plantar no Leg Press', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/03/Panturrilha-no-leg-press.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão Plantar de Tornozelo'] },
-      { name: 'Flexão Plantar Unilateral', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/03/Elevacao-de-panturrilha-com-carga-em-uma-perna.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão Plantar de Tornozelo'] },
-      { name: 'Flexão Plantar em Pé', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2023/03/elevacao-de-panturrilhas-com-o-peso-do-corpo.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão Plantar de Tornozelo'] },
-      { name: 'Flexão Plantar no Degrau', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2023/07/standing-calf-raise-on-a-staircase.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão Plantar de Tornozelo'] }
+      { name: 'Panturrilha em Pé', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2023/03/elevacao-de-panturrilhas-com-o-peso-do-corpo.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão Plantar'] },
+      { name: 'Panturrilha Sentado', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2018/10/lever-seated-calf-raise-.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão Plantar'] },
+      { name: 'Panturrilha Leg Press', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/03/Panturrilha-no-leg-press.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão Plantar'] },
+    ]
+  },
+  // Alongamentos
+  {
+    id: 'alongamentos',
+    name: 'Alongamentos',
+    region: 'Mobilidade',
+    image: null,
+    composition: 'Fibras musculares e tecido conjuntivo em estiramento.',
+    action: 'Aumento da flexibilidade.',
+    plane: 'Múltiplos',
+    exercises: [
+      { name: 'Alongamento Isquiotibiais', gif: 'https://api.smartworkout.app/asset/image/19a0f2b7-f61f-488d-ac28-89bc9b94d192', isRealGif: true, plane: 'Sagital', movements: ['Estiramento Posterior'] },
+      { name: 'Postura da Criança', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/postura-da-crianca.gif', isRealGif: true, plane: 'Sagital', movements: ['Estiramento Lombar'] },
+      { name: 'Alongamento Peitoral', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/alongamento-peitoral-parede.gif', isRealGif: true, plane: 'Frontal', movements: ['Estiramento Peitoral'] }
+    ]
+  },
+  // Cardio e HIIT
+  {
+    id: 'cardio',
+    name: 'Cardio e HIIT',
+    region: 'Corpo Inteiro',
+    image: null,
+    composition: 'Sistema cardiovascular e musculoesquelético.',
+    action: 'Alta intensidade e queima calórica.',
+    plane: 'Múltiplos',
+    exercises: [
+      { name: 'Polichinelo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/polichinelo.gif', isRealGif: true, plane: 'Frontal', movements: ['Salto'] },
+      { name: 'Burpee', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/burpee.gif', isRealGif: true, plane: 'Sagital', movements: ['Composto'] },
+      { name: 'Mountain Climber', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/escalador-mountain-climber.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Quadril'] },
+      { name: 'Corrida no Lugar', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/corrida-estacionaria-joelhos-altos.gif', isRealGif: true, plane: 'Sagital', movements: ['Corrida'] },
+      { name: 'Pular Corda', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/pular-corda.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] },
+      { name: 'Salto em Caixa', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/salto-na-caixa.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] },
+      { name: 'Sprint', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/corrida-sprint.gif', isRealGif: true, plane: 'Sagital', movements: ['Corrida'] },
+      { name: 'Jump Squat', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/agachamento-com-salto.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] },
+      { name: 'Skater Jumps', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/salto-lateral-skater-jump.gif', isRealGif: true, plane: 'Frontal', movements: ['Salto Lateral'] },
+      { name: 'Polichinelo Cruzado', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/polichinelo-cruzado.gif', isRealGif: true, plane: 'Frontal', movements: ['Salto'] },
+      { name: 'Step Up', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/subida-no-banco-step-up.gif', isRealGif: true, plane: 'Sagital', movements: ['Subida'] },
+      { name: 'Prancha Jack', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/prancha-jack.gif', isRealGif: true, plane: 'Frontal', movements: ['Salto'] },
+      { name: 'Calcanhar no Glúteo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/corrida-estacionaria-calcanhar-no-gluteo.gif', isRealGif: true, plane: 'Sagital', movements: ['Corrida'] },
+      { name: 'Polisapato', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/polisapato.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] },
+      { name: 'Agachamento Lateral Salto', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/agachamento-com-salto-lateral.gif', isRealGif: true, plane: 'Frontal', movements: ['Salto'] },
+      { name: 'Shadow Boxing', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/shadow-boxing.gif', isRealGif: true, plane: 'Múltiplos', movements: ['Soco'] },
+      { name: 'Pulo Corda Cruzado', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/pular-corda-cruzado.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] },
+      { name: 'Avanço com Salto', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/avanco-com-salto.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] }
     ]
   }
 ];

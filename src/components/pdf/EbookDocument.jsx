@@ -189,6 +189,76 @@ const styles = StyleSheet.create({
         fontSize: 10,
         color: '#64748b',
         lineHeight: 1.4
+    },
+    // Novas Seções (Teoria e Pratique)
+    sectionTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#0f172a',
+        marginBottom: 15,
+        backgroundColor: '#f1f5f9',
+        padding: 10,
+        textAlign: 'center',
+        textTransform: 'uppercase'
+    },
+    pratiqueHero: {
+        backgroundColor: '#1e293b',
+        padding: 20,
+        borderRadius: 8,
+        color: 'white',
+        marginBottom: 20
+    },
+    pratiqueTitle: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: '#e11d48',
+        marginBottom: 10
+    },
+    statRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 15,
+        gap: 10
+    },
+    statBox: {
+        flex: 1,
+        backgroundColor: '#f8fafc',
+        padding: 10,
+        borderRadius: 6,
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: '#e2e8f0'
+    },
+    statValue: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#0f172a'
+    },
+    statLabel: {
+        fontSize: 8,
+        color: '#64748b',
+        textTransform: 'uppercase'
+    },
+    theoryBlock: {
+        marginBottom: 20,
+        padding: 15,
+        backgroundColor: '#f8fafc',
+        borderRadius: 8,
+        borderLeftWidth: 4,
+        borderLeftColor: '#e11d48'
+    },
+    theoryTitle: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: '#0f172a',
+        marginBottom: 8,
+        textTransform: 'uppercase'
+    },
+    theoryItem: {
+        fontSize: 10,
+        color: '#334155',
+        marginBottom: 4,
+        paddingLeft: 5
     }
 });
 
@@ -219,7 +289,58 @@ export const EbookDocument = () => (
             <View style={styles.coverAccent} />
             <Text style={styles.coverTitle}>CinesioFit App</Text>
             <Text style={styles.coverSubtitle}>Guia Completo de Musculação{'\n'}e Cinesiologia Aplicada</Text>
-            <Text style={styles.coverAuthor}>Material de Estudo Dinâmico</Text>
+            <Text style={styles.coverAuthor}>Material de Estudo Dinâmico - Pratique Fit</Text>
+        </Page>
+
+        {/* PRATIQUE E TEORIA */}
+        <Page size="A4" style={styles.page}>
+            <View style={styles.header}>
+                <Text style={styles.headerTitle}>Institucional e Teoria</Text>
+            </View>
+
+            {/* PRATIQUE INFO */}
+            <View style={styles.pratiqueHero}>
+                <Text style={styles.pratiqueTitle}>Pratique Fitness</Text>
+                <Text style={{ fontSize: 10, color: '#94a3b8', marginBottom: 5 }}>Fundada em 20/09/2002 • CEO: Harley Tadeu</Text>
+                <Text style={{ fontSize: 11, color: '#cbd5e1' }}>Propósito: "Fazer o mundo um lugar mais feliz e saudável através do movimento."</Text>
+            </View>
+
+            <View style={styles.statRow}>
+                <View style={styles.statBox}><Text style={styles.statValue}>+150</Text><Text style={styles.statLabel}>Unidades</Text></View>
+                <View style={styles.statBox}><Text style={styles.statValue}>+230k</Text><Text style={styles.statLabel}>Alunos</Text></View>
+                <View style={styles.statBox}><Text style={styles.statValue}>4</Text><Text style={styles.statLabel}>Países</Text></View>
+                <View style={styles.statBox}><Text style={styles.statValue}>Top 5</Text><Text style={styles.statLabel}>Brasil</Text></View>
+            </View>
+
+            {/* TEORIA RAPIDA */}
+            <Text style={styles.sectionTitle}>Resumo Teórico</Text>
+
+            <View style={styles.theoryBlock}>
+                <Text style={styles.theoryTitle}>Bioenergética</Text>
+                <Text style={styles.theoryItem}>• ATP-CP: 0-10s, Altíssima Intensidade (Fosfagênio).</Text>
+                <Text style={styles.theoryItem}>• Glicolítico: 30s-2min, Alta Intensidade (Glicogênio).</Text>
+                <Text style={styles.theoryItem}>• Oxidativo: +2min, Baixa Intensidade (Oxigênio).</Text>
+            </View>
+
+            <View style={styles.theoryBlock}>
+                <Text style={styles.theoryTitle}>Biomecânica</Text>
+                <Text style={styles.theoryItem}>• Alavanca 1ª Classe: Equilíbrio (Pescoço).</Text>
+                <Text style={styles.theoryItem}>• Alavanca 2ª Classe: Força (Tornozelo).</Text>
+                <Text style={styles.theoryItem}>• Alavanca 3ª Classe: Velocidade (Bíceps) - A mais comum.</Text>
+                <Text style={styles.theoryItem}>• Cadeia Aberta (Extensora) vs Cadeia Fechada (Agachamento).</Text>
+            </View>
+
+            <View style={styles.theoryBlock}>
+                <Text style={styles.theoryTitle}>Atendimento e Avaliação</Text>
+                <Text style={styles.theoryItem}>• Pilares: Acolher, Conhecer e Ensinar.</Text>
+                <Text style={styles.theoryItem}>• CORE: Circular, Oportunidade, Restaurar, Elogiar.</Text>
+                <Text style={styles.theoryItem}>• PAC: Postura, Amplitude, Cadência.</Text>
+                <Text style={styles.theoryItem}>• ERE: Elogiar, Restaurar, Elogiar.</Text>
+                <Text style={styles.theoryItem}>• PAR-Q: Questionário de prontidão obrigatório.</Text>
+                <Text style={styles.theoryItem}>• Anamnese: Histórico de saúde e restrições médicas.</Text>
+            </View>
+
+            <Footer />
         </Page>
 
         {/* ÍNDICE DE MÚSCULOS */}

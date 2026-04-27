@@ -12,10 +12,11 @@ import { Movements } from './components/Movements';
 import { EbookGenerator } from './components/pdf/EbookGenerator';
 import { SplashScreen } from './components/SplashScreen';
 import { PratiqueTab } from './components/PratiqueTab';
+import { StudyTab } from './components/StudyTab';
 import { Quiz } from './components/Quiz';
 import { ExerciseCatalog } from './components/ExerciseCatalog';
 import { IslandMenu } from './components/IslandMenu';
-import { Activity, Layers, Move, Building } from 'lucide-react';
+import { Activity, Layers, Move, Building, Brain } from 'lucide-react';
 
 const Main = styled.main`
   max-width: 1152px;
@@ -136,12 +137,7 @@ export default function App() {
         />
       )}
 
-      <Header 
-        activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
-        atlasSubTab={atlasSubTab} 
-        setAtlasSubTab={setAtlasSubTab} 
-      />
+      <Header setActiveTab={setActiveTab} />
 
       <Main>
         {activeTab === 'atlas' && (
@@ -157,6 +153,9 @@ export default function App() {
             </SubNavItem>
             <SubNavItem $active={atlasSubTab === 'pratique'} onClick={() => setAtlasSubTab('pratique')}>
               <Building size={16} /> Pratique Fit
+            </SubNavItem>
+            <SubNavItem $active={atlasSubTab === 'teoria'} onClick={() => setAtlasSubTab('teoria')}>
+              <Brain size={16} /> Estudo Teórico
             </SubNavItem>
           </SubNavList>
         )}
@@ -175,6 +174,8 @@ export default function App() {
         {activeTab === 'atlas' && atlasSubTab === 'movements' && <Movements />}
 
         {activeTab === 'atlas' && atlasSubTab === 'pratique' && <PratiqueTab />}
+
+        {activeTab === 'atlas' && atlasSubTab === 'teoria' && <StudyTab />}
 
         {activeTab === 'catalog' && <ExerciseCatalog />}
 
