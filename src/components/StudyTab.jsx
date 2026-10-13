@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BookOpen, Zap, Activity, HeartPulse, UserCheck, ShieldCheck, ClipboardList, Info } from 'lucide-react';
+import { BookOpen, Zap, Activity, HeartPulse, UserCheck, ShieldCheck, ClipboardList, Info, Award, ArrowRight, Flame } from 'lucide-react';
 
 const Container = styled.div`
   max-width: 1000px;
@@ -139,13 +139,118 @@ const AlertBox = styled.div`
   }
 `;
 
-export const StudyTab = () => {
+const RedBandBanner = styled.div`
+  background: linear-gradient(135deg, #881337 0%, #be123c 60%, #e11d48 100%);
+  border-radius: 22px;
+  padding: 1.6rem 2rem;
+  color: white;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 12px 28px -6px rgba(225, 29, 72, 0.35);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px -6px rgba(225, 29, 72, 0.45);
+    background: linear-gradient(135deg, #9f1239 0%, #e11d48 100%);
+  }
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+
+    .icon-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0 0 0.25rem 0;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #ffe4e6;
+    }
+  }
+
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: #9f1239;
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.4rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover .action-btn {
+    transform: scale(1.03);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+
+    .action-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+`;
+
+export const StudyTab = ({ onOpenPulseiraVermelha }) => {
   return (
     <Container>
       <SectionHeader>
         <h2><BookOpen size={36} /> Central de Estudos</h2>
         <p>Domine a teoria fundamental para uma prescrição de excelência.</p>
       </SectionHeader>
+
+      {onOpenPulseiraVermelha && (
+        <RedBandBanner onClick={onOpenPulseiraVermelha}>
+          <div className="banner-content">
+            <div className="icon-badge">
+              <Award size={30} />
+            </div>
+            <div>
+              <h3><Flame size={20} color="#fda4af" /> Módulo Pulseira Vermelha (UniPower)</h3>
+              <p>Princípios do Treinamento, Biomecânica de Alavancas, Diabetes e Hipertensão Arterial.</p>
+            </div>
+          </div>
+          <div className="action-btn">
+            Acessar Módulo Oficial <ArrowRight size={16} />
+          </div>
+        </RedBandBanner>
+      )}
 
       <ContentGrid>
         {/* Bioenergética */}

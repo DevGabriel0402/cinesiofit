@@ -151,5 +151,413 @@ export const QUIZ_QUESTIONS = [
   { id: 107, category: 'Pulseira Verde', question: 'BANCO ABDUTOR - GRUPO MUSCULAR:', options: ['GLUTEO MAXIMO E GLUTEO MINIMO', 'VASTO LATERAL', 'VASTO MEDIAL', 'GLUTEO MEDIO E GLUTEO MINIMO'], correctAnswer: 3, explanation: 'Os principais músculos são Glúteo Médio e Mínimo.' },
   { id: 108, category: 'Pulseira Verde', question: 'BANCO ABDUTOR - SUBSTITUIÇÃO:', options: ['ABDUÇÃO DE QUADRIL (SOLO) COM CANELEIRA', 'GLUTEO MAQUINA 3 APOIOS', 'ADUÇÃO DE QUADRIL (SOLO) COM CANELEIRA', 'ADUÇÃO DE QUADRIL NO CROSS OVER'], correctAnswer: 0, explanation: 'A Abdução solo é a versão equivalente sem equipamento.' },
 
-  { id: 109, category: 'Bioenergética', question: 'Qual sistema energético predominante de um maratonista durante a maior parte da prova?', options: ['FOSFAGÊNIO (ATP-CP)', 'OXIGÊNIO (SISTEMA OXIDATIVO)', 'GLICOGÊNIO (GLICOLÍTICO)', 'NÃO ESTUDEI O SUFICIENTE'], correctAnswer: 1, explanation: 'Maratonistas realizam atividades de longa duração onde o sistema aeróbio (Oxigênio) é o principal.' }
+  { id: 109, category: 'Bioenergética', question: 'Qual sistema energético predominante de um maratonista durante a maior parte da prova?', options: ['FOSFAGÊNIO (ATP-CP)', 'OXIGÊNIO (SISTEMA OXIDATIVO)', 'GLICOGÊNIO (GLICOLÍTICO)', 'NÃO ESTUDEI O SUFICIENTE'], correctAnswer: 1, explanation: 'Maratonistas realizam atividades de longa duração onde o sistema aeróbio (Oxigênio) é o principal.' },
+
+  // ==========================================
+  // VALIDAÇÃO PULSEIRA VERMELHA (UniPower / Metodologia Power)
+  // ==========================================
+  {
+    id: 201,
+    category: 'Pulseira Vermelha',
+    question: 'Na ciência do treinamento esportivo, qual a principal diferença conceitual entre "Carga" e "Peso"?',
+    options: [
+      'São termos rigorosamente sinônimos na musculação e nos exercícios resistidos.',
+      'Peso é apenas um dos componentes da carga; carga refere-se ao estímulo total capaz de quebrar a homeostase.',
+      'Carga é exclusiva de exercícios aeróbicos, enquanto peso é exclusivo do treinamento resistido.',
+      'Peso mede a capacidade de recuperação e carga mede a massa do haltere.'
+    ],
+    correctAnswer: 1,
+    explanation: 'A carga de treinamento é o estímulo total (que quebra a homeostase e gera nova adaptação). O peso utilizado é apenas uma das componentes que compõem a carga.'
+  },
+  {
+    id: 202,
+    category: 'Pulseira Vermelha',
+    question: 'Quais são as cinco variáveis fundamentais que compõem a Carga de Treinamento?',
+    options: [
+      'Peso, Repetições, Séries, Descanso e Frequência Cardíaca.',
+      'Volume, Intensidade, Duração, Frequência e Densidade.',
+      'Carga, Potência, Força, Resistência e Velocidade.',
+      'Postura, Amplitude, Cadência, Respiração e Equilíbrio.'
+    ],
+    correctAnswer: 1,
+    explanation: 'As 5 variáveis da carga são: Volume (quantidade), Intensidade (% esforço), Duração (tempo), Frequência (vezes por período) e Densidade (relação esforço/pausa).'
+  },
+  {
+    id: 203,
+    category: 'Pulseira Vermelha',
+    question: 'Qual é o erro conceitual comum na interpretação do Princípio da Individualidade Biológica?',
+    options: [
+      'Considerar que fatores genéticos determinam as respostas ao exercício.',
+      'Achar que o princípio exige obrigatoriamente prescrever uma rotina isolada/exclusiva para cada pessoa (como personal trainer).',
+      'Reconhecer que indivíduos diferentes têm limiares de dor e tolerância ao estresse divergentes.',
+      'Acreditar que a motivação afeta o rendimento físico durante o treino.'
+    ],
+    correctAnswer: 1,
+    explanation: 'O erro é associar o princípio à obrigação de prescrever treinos individuais exclusivos (inviável em esportes coletivos). O conceito real é que cada organismo responde de forma única à mesma carga.'
+  },
+  {
+    id: 204,
+    category: 'Pulseira Vermelha',
+    question: 'Segundo a Síndrome de Adaptação Geral (SAG), qual magnitude de estímulo é necessária para gerar adaptação efetiva de performance e ganho de massa?',
+    options: [
+      'Estímulo Fraco (mantém a homeostase sem estresse).',
+      'Estímulo Médio / Leve (ótimo para saúde geral, mas ineficaz para alta performance).',
+      'Estímulo Forte (quebra a homeostase e gera microlesões teciduais controladas).',
+      'Estímulo Muito Forte (ultrapassa a capacidade de regeneração imediata).'
+    ],
+    correctAnswer: 2,
+    explanation: 'Apenas estímulos Fortes quebram a homeostase e causam microlesões controladas capazes de disparar o ganho de massa, VO2 máx e capacidade funcional.'
+  },
+  {
+    id: 205,
+    category: 'Pulseira Vermelha',
+    question: 'No manejo inteligente da carga, por que um estímulo forte na segunda-feira pode se tornar prejudicial se repetido na sexta-feira com a mesma intensidade?',
+    options: [
+      'Porque a musculatura perde a memória motora durante a semana.',
+      'Devido ao efeito acumulado de fadiga neuromuscular, sono e estresse ao longo da semana.',
+      'Porque o metabolismo basal zera após 72 horas de treino.',
+      'Porque os receptores musculares ficam imunes ao exercício.'
+    ],
+    correctAnswer: 1,
+    explanation: 'O efeito acumulado da fadiga semanal transforma uma carga antes adequada em um estresse "muito forte", elevando o risco de sobretreinamento e lesão se não for dosada com prudência.'
+  },
+  {
+    id: 206,
+    category: 'Pulseira Vermelha',
+    question: 'No Princípio da Sobrecarga, onde e quando ocorrem os reais ganhos fisiológicos de performance e massa muscular?',
+    options: [
+      'Durante a sessão de treino, quando as fibras musculares estão contraindo sob carga.',
+      'Exclusivamente nos primeiros 5 minutos após o término do exercício.',
+      'No período de recuperação e descanso, através da assimilação compensatória e supercompensação.',
+      'Durante a ingestão imediata de pré-treino com cafeína.'
+    ],
+    correctAnswer: 2,
+    explanation: 'Durante o treino só ocorrem depleção de substratos energéticos e danos teciduais. É na recuperação que o organismo reconstrói e atinge o nível superior (supercompensação).'
+  },
+  {
+    id: 207,
+    category: 'Pulseira Vermelha',
+    question: 'Qual é o segredo técnico do Princípio da Continuidade para garantir uma curva ascendente e contínua de rendimento?',
+    options: [
+      'Aplicar uma nova sobrecarga antes que o corpo comece a se recuperar da sessão anterior.',
+      'Aplicar o novo estímulo exatamente no ápice (pico) da curva de supercompensação.',
+      'Aguardar pelo menos duas semanas entre treinos para ter certeza da recuperação total.',
+      'Manter o mesmo peso e repetições durante todo o ano sem alterações.'
+    ],
+    correctAnswer: 1,
+    explanation: 'O ponto ótimo é aplicar a nova carga no topo da curva de supercompensação. Intervalos muito longos causam perda da adaptação, e muito curtos causam queda no rendimento por fadiga.'
+  },
+  {
+    id: 208,
+    category: 'Pulseira Vermelha',
+    question: 'Por que se recomenda alta frequência de treinos (4 a 5 vezes por semana) para alunos iniciantes na academia?',
+    options: [
+      'Porque iniciantes suportam estímulos muito fortes sem risco de lesão.',
+      'Porque treinam com estímulos médios/leves, cuja supercompensação ocorre em poucas horas, além de consolidar o hábito.',
+      'Porque seus estoques de glicogênio não se esgotam em treinos resistidos.',
+      'Para levá-los rapidamente à falha muscular concêntrica.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Iniciantes realizam estímulos leves a médios (recuperação rápida em poucas horas), e a repetição frequente é essencial para fixar o hábito e a mudança de rotina.'
+  },
+  {
+    id: 209,
+    category: 'Pulseira Vermelha',
+    question: 'Quais são os três pilares que determinam a prescrição correta no Princípio da Especificidade?',
+    options: [
+      'Gasto calórico, perda de água e percentual de gordura corporal.',
+      'Sistema energético predominante, tipo de recrutamento das fibras musculares e cinesiologia/ângulos de movimento.',
+      'Horário do treino, tipo de suplementação e tempo total da esteira.',
+      'Número de repetições máximas, flexibilidade estática e peso na balança.'
+    ],
+    correctAnswer: 1,
+    explanation: 'A especificidade exige alinhar: 1) Sistema energético predominante, 2) Tipo de fibra (rápida vs lenta) e 3) Cinesiologia e ângulos articulares do gesto motor.'
+  },
+  {
+    id: 210,
+    category: 'Pulseira Vermelha',
+    question: 'Segundo o Princípio da Interdependência entre Volume e Intensidade, qual é a regra ao se aplicar uma nova sobrecarga?',
+    options: [
+      'Subir simultaneamente o peso máximo e dobrar o número de séries na mesma sessão.',
+      'Volume e intensidade são grandezas inversamente proporcionais: ao aumentar um, deve-se manter ou diminuir o outro.',
+      'A intensidade deve ser sempre o triplo do volume.',
+      'O volume só pode ser manipulado após 6 meses ininterruptos de treino de força.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Volume e intensidade são inversamente proporcionais. Elevar ambos juntos sobrecarrega excessivamente o organismo, gerando alto risco de lesão.'
+  },
+  {
+    id: 211,
+    category: 'Pulseira Vermelha',
+    question: 'Qual a ordem correta para aplicação da primeira sobrecarga na fase inicial de progressão de um aluno?',
+    options: [
+      '1º Aumento de peso ➔ 2º Diminuição do descanso ➔ 3º Repetições.',
+      '1º Repetições ➔ 2º Quantidade de séries ➔ 3º Novos exercícios/duração ➔ 4º Intensidade (peso/velocidade).',
+      '1º Intensidade máxima (1RM) ➔ 2º Séries ➔ 3º Repetições.',
+      '1º Velocidade na esteira ➔ 2º Carga ➔ 3º Séries.'
+    ],
+    correctAnswer: 1,
+    explanation: 'A regra de ouro é progredir as variáveis de volume primeiro (repetições ➔ séries ➔ exercícios) antes de subir a intensidade (peso/velocidade).'
+  },
+  {
+    id: 212,
+    category: 'Pulseira Vermelha',
+    question: 'Qual é o tempo de recuperação ideal recomendado para estímulos fortes de alta intensidade (hipertrofia e força máxima) de um mesmo grupamento muscular?',
+    options: [
+      'Poucas horas (pode treinar o mesmo músculo no turno da noite).',
+      '24 a 72 horas (média recomendada de 48 horas).',
+      'Mais de 10 dias de repouso absoluto.',
+      'Não há necessidade de intervalo se o aluno tiver menos de 30 anos.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Estímulos fortes exigem entre 24 a 72 horas de intervalo (média 48h) para regeneração tecidual, supercompensação e prevenção de lesões.'
+  },
+  {
+    id: 213,
+    category: 'Pulseira Vermelha',
+    question: 'No sistema de alavancas do corpo humano, o que representam o Ponto de Apoio (Eixo), a Força Potente e a Força Resistente, respectivamente?',
+    options: [
+      'Tendões, Gordura corporal e Articulações.',
+      'Articulações, Contração muscular (inserção no osso) e Carga externa / Peso corporal.',
+      'Ossos longos, Sistema nervoso central e Aparelhos de musculação.',
+      'Fibras rápidas, Fibras lentas e Gravidade.'
+    ],
+    correctAnswer: 1,
+    explanation: 'O Eixo/Apoio é sempre a articulação; a Força Potente é gerada pela contração muscular no ponto de inserção; a Força Resistente é a carga ou peso corporal a ser superado.'
+  },
+  {
+    id: 214,
+    category: 'Pulseira Vermelha',
+    question: 'Como se define a regra de ouro para classificar os tipos de alavancas (1ª, 2ª e 3ª classes)?',
+    options: [
+      'Pelo tamanho do osso envolvido no movimento.',
+      'Pela identificação de qual componente (Eixo, Resistência ou Força) está localizado no MEIO.',
+      'Pela quantidade de repetições realizadas na série.',
+      'Pela velocidade da fase excêntrica do movimento.'
+    ],
+    correctAnswer: 1,
+    explanation: 'A classificação depende estritamente do componente central: Interfixa (Eixo no meio), Inter-resistente (Resistência no meio) e Interpotente (Força no meio).'
+  },
+  {
+    id: 215,
+    category: 'Pulseira Vermelha',
+    question: 'A extensão de cotovelo realizada pelo tríceps braquial é um exemplo clássico de qual tipo de alavanca?',
+    options: [
+      'Interpotente (3ª Classe).',
+      'Inter-resistente (2ª Classe).',
+      'Interfixa (1ª Classe).',
+      'Alavanca helicoidal pura.'
+    ],
+    correctAnswer: 2,
+    explanation: 'Na extensão de cotovelo, o eixo articular do cotovelo fica entre a força potente gerada no olécrano e a resistência da mão, caracterizando uma alavanca Interfixa (1ª Classe).'
+  },
+  {
+    id: 216,
+    category: 'Pulseira Vermelha',
+    question: 'A flexão plantar (elevação de panturrilha) é um exemplo corporal de qual classe de alavanca?',
+    options: [
+      'Inter-resistente (2ª Classe), onde a resistência fica entre o eixo e a força potente.',
+      'Interfixa (1ª Classe), onde o eixo fica no meio.',
+      'Interpotente (3ª Classe), onde a força fica no meio.',
+      'Alavanca nula sem vantagem mecânica.'
+    ],
+    correctAnswer: 0,
+    explanation: 'A panturrilha opera como alavanca Inter-resistente (2ª classe): o peso corporal (resistência) atua entre o apoio dos dedos (eixo) e o tendão calcâneo (força), conferindo alta vantagem mecânica.'
+  },
+  {
+    id: 217,
+    category: 'Pulseira Vermelha',
+    question: 'Qual é a classe de alavanca mais abundante e comum no corpo humano (ex: flexão de cotovelo pelo bíceps e abdução de ombro pelo deltoide)?',
+    options: [
+      'Alavanca de 1ª Classe (Interfixa).',
+      'Alavanca de 2ª Classe (Inter-resistente).',
+      'Alavanca de 3ª Classe (Interpotente).',
+      'Alavanca de 4ª Classe (Composta).'
+    ],
+    correctAnswer: 2,
+    explanation: 'A alavanca Interpotente (3ª classe, com Força no meio) é a mais comum no corpo humano. Sacrifica força para fornecer ampla velocidade e arco de movimento.'
+  },
+  {
+    id: 218,
+    category: 'Pulseira Vermelha',
+    question: 'Como o ponto de inserção anatômico (Braço de Força - BF) é fixo no corpo humano, qual é a única estratégia biomecânica para facilitar ou dificultar um exercício mantendo a mesma carga?',
+    options: [
+      'Aumentar o tempo de sono do aluno.',
+      'Manipular o comprimento do Braço de Resistência (BR).',
+      'Mudar a ingestão de creatina pós-treino.',
+      'Substituir barras retas por barras w sem alterar o ângulo.'
+    ],
+    correctAnswer: 1,
+    explanation: 'A única forma biomecânica de modular o torque resistente sem mexer no peso é alterar o Braço de Resistência (BR): encurtar o BR facilita; aumentar o BR dificulta o exercício.'
+  },
+  {
+    id: 219,
+    category: 'Pulseira Vermelha',
+    question: 'Na Elevação Lateral para deltoides, flexionar os cotovelos a 90° em vez de mantê-los estendidos causa qual impacto prático?',
+    options: [
+      'Aumenta o torque articular no ombro tornando o peso 2x mais difícil.',
+      'Encurta o Braço de Resistência pela metade, permitindo realizar o movimento com a mesma carga com muito menos esforço.',
+      'Transfere o trabalho para o peitoral menor.',
+      'Elimina o recrutamento das fibras do deltoide lateral.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Ao dobrar o cotovelo a 90°, o haltere aproxima-se do eixo do ombro, cortando o BR pela metade. O aluno mantém a carga de 8kg, por exemplo, mas com esforço reduzido na fadiga.'
+  },
+  {
+    id: 220,
+    category: 'Pulseira Vermelha',
+    question: 'Organize as seguintes variações do Abdominal Supra da MAIS FÁCIL para a MAIS DIFÍCIL quanto ao comprimento do Braço de Resistência (BR):',
+    options: [
+      'Carga acima da cabeça ➔ Braços estendidos ➔ Mãos na cabeça ➔ Braços no peito.',
+      'Braços no peito ➔ Mãos na cabeça ➔ Braços estendidos ➔ Carga acima da cabeça.',
+      'Braços estendidos ➔ Braços no peito ➔ Carga acima da cabeça ➔ Mãos na cabeça.',
+      'Mãos na cabeça ➔ Braços no peito ➔ Carga acima da cabeça ➔ Braços estendidos.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Braços cruzados no peito (BR mínimo, fácil) ➔ Mãos na cabeça (BR intermediário) ➔ Braços estendidos acima da cabeça (BR longo) ➔ Com carga adicional acima da cabeça (máxima exigência).'
+  },
+  {
+    id: 221,
+    category: 'Pulseira Vermelha',
+    question: 'Na fisiopatologia do Diabetes, qual a função da insulina de acordo com a clássica analogia do "chaveiro"?',
+    options: [
+      'A insulina quebra as moléculas de gordura nos adipócitos.',
+      'A insulina atua como o chaveiro que abre os receptores da membrana celular ("fechaduras") para permitir a entrada da glicose.',
+      'A insulina impede a absorção gástrica de carboidratos.',
+      'A insulina converte lactato em glicose hepática.'
+    ],
+    correctAnswer: 1,
+    explanation: 'A insulina funciona como chaveiro: conecta-se aos receptores celulares abrindo as comportas para a glicose sair do sangue e entrar nas células para produzir energia.'
+  },
+  {
+    id: 222,
+    category: 'Pulseira Vermelha',
+    question: 'Qual é a diferença fundamental entre Diabetes Tipo 1 e Diabetes Tipo 2?',
+    options: [
+      'O Tipo 1 ocorre apenas em idosos sedentários e o Tipo 2 em recém-nascidos.',
+      'No Tipo 1 o pâncreas perde a capacidade de produzir insulina; no Tipo 2 o pâncreas produz insulina, mas a célula apresenta resistência periférica ("fechadura enferrujada").',
+      'No Tipo 1 a glicose é muito baixa e no Tipo 2 é sempre normal.',
+      'No Tipo 2 o exercício físico é proibido e no Tipo 1 é obrigatório.'
+    ],
+    correctAnswer: 1,
+    explanation: 'No Tipo 1 há incapacidade de produzir insulina (autoimune). No Tipo 2 (>90% dos casos), o pâncreas produz, mas os tecidos têm resistência à ação da insulina ("fechadura enferrujada").'
+  },
+  {
+    id: 223,
+    category: 'Pulseira Vermelha',
+    question: 'Quais os valores de referência para classificação de Pré-Diabetes e Diabetes estabelecido na glicemia em jejum?',
+    options: [
+      'Normal: 30 a 50 mg/dL | Pré-Diabetes: 50 a 70 mg/dL | Diabetes: > 70 mg/dL.',
+      'Normal: 70 a 100 mg/dL | Pré-Diabetes: 100 a 125 mg/dL | Diabetes: a partir de 125 mg/dL.',
+      'Normal: 120 a 140 mg/dL | Pré-Diabetes: 140 a 180 mg/dL | Diabetes: > 200 mg/dL.',
+      'Normal: 60 a 90 mg/dL | Pré-Diabetes: 90 a 110 mg/dL | Diabetes: > 150 mg/dL.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Em jejum: 70 a 100 mg/dL é Normal; 100 a 125 mg/dL é Pré-Diabetes (alerta); a partir de 125 mg/dL diagnostica-se Diabetes.'
+  },
+  {
+    id: 224,
+    category: 'Pulseira Vermelha',
+    question: 'Por que o exercício físico é considerado a intervenção terapêutica mais poderosa no controle e remissão do Diabetes Tipo 2?',
+    options: [
+      'Porque elimina toda a gordura visceral em apenas 3 sessões de treino.',
+      'Porque melhora a sensibilidade à insulina ("efeito desengripante") e a contração muscular estimula captação direta de glicose mesmo sem insulina.',
+      'Porque substitui permanentemente a necessidade de beber água.',
+      'Porque faz a glicose se transformar em ácido lático não absorvível.'
+    ],
+    correctAnswer: 1,
+    explanation: 'O exercício gera captação direta de glicose pelos músculos durante a contração (independente de insulina) e cronicamente restaura a sensibilidade aos receptores ("efeito desengripante").'
+  },
+  {
+    id: 225,
+    category: 'Pulseira Vermelha',
+    question: 'De acordo com a ADA e o método PSF da UniPower, qual a conduta para um aluno diabético com glicemia pré-treino inferior a 100 mg/dL?',
+    options: [
+      'Iniciar corrida intensa para elevar os níveis de adrenalina.',
+      'Ingerir de 15 a 30 g de carboidratos de rápida absorção antes de iniciar o exercício para evitar hipoglicemia.',
+      'Suspender o treino por uma semana.',
+      'Aplicar 10 unidades de insulina rápida antes do aquecimento.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Se a glicemia pré-treino for < 100 mg/dL, deve-se fornecer 15 a 30 g de carboidrato (fruta, sachê de mel, isotônico) antes de treinar para prevenir hipoglicemia severa.'
+  },
+  {
+    id: 226,
+    category: 'Pulseira Vermelha',
+    question: 'Se um aluno diabético apresentar glicemia pré-treino superior a 200 mg/dL e fizer aplicação de insulina de ação rápida, qual orientação de tempo deve ser seguida antes de iniciar os exercícios?',
+    options: [
+      'Iniciar o treino imediatamente sem esperar.',
+      'Aguardar cerca de 1h30 (90 minutos) antes de começar a sessão de treino.',
+      'Aguardar exatamente 10 minutos.',
+      'Treinar apenas no dia seguinte em jejum.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Caso haja correção com insulina rápida pré-treino para glicemia > 200 mg/dL, orienta-se aguardar cerca de 90 minutos para evitar a sobreposição de pico da insulina com o efeito hipoglicemiante do exercício.'
+  },
+  {
+    id: 227,
+    category: 'Pulseira Vermelha',
+    question: 'Pelas diretrizes da Sociedade Brasileira de Cardiologia (SBC), qual o ponto de corte para classificação de Hipertensão Arterial estabelecida?',
+    options: [
+      'PA ≥ 120 / 80 mmHg.',
+      'PA ≥ 130 / 80 mmHg.',
+      'PA ≥ 140 / 90 mmHg (14 por 9).',
+      'PA ≥ 160 / 100 mmHg.'
+    ],
+    correctAnswer: 2,
+    explanation: 'Pela SBC: Normotensão ≤ 120/80 mmHg; Pré-hipertensão 121-139 / 81-89 mmHg; Hipertensão estabelecida a partir de ≥ 140/90 mmHg.'
+  },
+  {
+    id: 228,
+    category: 'Pulseira Vermelha',
+    question: 'Qual a conclusão das evidências científicas oficiais (ACSM) quanto à resposta hipotensiva entre exercícios aeróbicos e exercícios resistidos na Hipertensão?',
+    options: [
+      'Apenas exercícios aeróbicos promovem redução da pressão arterial.',
+      'Exercícios resistidos (musculação) são perigosos e proibidos para hipertensos.',
+      'Exercícios aeróbicos e resistidos são igualmente eficazes, proporcionando reduções pressóricas estatisticamente equivalentes.',
+      'Nenhum tipo de exercício reduz a pressão arterial sem remédios.'
+    ],
+    correctAnswer: 2,
+    explanation: 'Posicionamentos e revisões sistemáticas do ACSM atestam que tanto o treino aeróbico quanto a musculação reduzem a PA de forma clinicamente equivalente e complementar.'
+  },
+  {
+    id: 229,
+    category: 'Pulseira Vermelha',
+    question: 'Qual é o ponto de corte crítico de pressão arterial na aferição pré-treino em que o exercício é ESTRITAMENTE CONTRAINDICADO na sessão?',
+    options: [
+      'PA ≥ 135 / 85 mmHg.',
+      'PA ≥ 160 / 100 mmHg.',
+      'PA ≥ 200 mmHg Sistólica ou ≥ 115 mmHg Diastólica (20 por 11,5).',
+      'PA ≥ 140 / 90 mmHg.'
+    ],
+    correctAnswer: 2,
+    explanation: 'Valores iguais ou superiores a 200 mmHg de PAS ou 115 mmHg de PAD contraindicam categoricamente o treino na sessão. O aluno deve repousar e procurar avaliação médica.'
+  },
+  {
+    id: 230,
+    category: 'Pulseira Vermelha',
+    question: 'Por que em alunos hipertensos medicados com beta-bloqueadores deve-se utilizar a Escala de PSE (Borg ≤ 4) em vez da Frequência Cardíaca?',
+    options: [
+      'Porque beta-bloqueadores atenuam e limitam o aumento natural da frequência cardíaca, tornando a FC um parâmetro não confiável.',
+      'Porque beta-bloqueadores provocam taquicardia descontrolada durante o repouso.',
+      'Porque a escala PSE é mais fácil de calcular no aplicativo do que a pulsação.',
+      'Porque beta-bloqueadores impedem a contração do miocárdio.'
+    ],
+    correctAnswer: 0,
+    explanation: 'Medicamentos beta-bloqueadores travam a elevação da frequência cardíaca em esforço. Portanto, a FC não reflete a real intensidade do treino, devendo-se guiar pela percepção de esforço (PSE ≤ 4, pouco difícil).'
+  },
+  {
+    id: 231,
+    category: 'Pulseira Vermelha',
+    question: 'Por que a Manobra de Valsalva (bloqueio respiratório na fase de esforço) deve ser estritamente abolida em alunos hipertensos?',
+    options: [
+      'Porque queima mais calorias do que a respiração contínua.',
+      'Porque gera picos severos de pressão arterial intratorácica e sistêmica, elevando o risco de síncope vasovagal, arritmias e AVC.',
+      'Porque prejudica o tônus muscular do peitoral.',
+      'Porque impede o alongamento da fáscia muscular dos membros inferiores.'
+    ],
+    correctAnswer: 1,
+    explanation: 'Prender a respiração durante o esforço gera elevação perigosa e súbita da pressão arterial e intratorácica, expondo o hipertenso a eventos cardiovasculares graves e desmaios.'
+  }
 ];
+

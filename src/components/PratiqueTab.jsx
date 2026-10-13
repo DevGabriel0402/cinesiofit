@@ -32,7 +32,7 @@ const HeroCard = styled.div`
     right: 0;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(225, 29, 72, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     transform: translate(100px, -100px);
   }
@@ -255,7 +255,7 @@ export const PratiqueTab = () => {
   return (
     <Container>
       <HeroCard>
-        <h2>Pratique Fitness</h2>
+        <h2 style={{ color: "#fafafa" }}>Pratique Fitness</h2>
         <p>
           "Fazer o mundo um lugar mais feliz e saudável"
         </p>

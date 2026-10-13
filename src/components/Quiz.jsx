@@ -458,11 +458,11 @@ const ReviewItem = styled.div`
   }
 `;
 
-export const Quiz = () => {
+export const Quiz = ({ initialCategory = 'Todas' }) => {
   const [quizStage, setQuizStage] = useState('setup'); // 'setup', 'playing', 'finished'
   
   // Config States
-  const [configCategory, setConfigCategory] = useState('Todas');
+  const [configCategory, setConfigCategory] = useState(initialCategory || 'Todas');
   const [configCount, setConfigCount] = useState(10);
   const [configMode, setConfigMode] = useState('estudo');
 
@@ -534,7 +534,7 @@ export const Quiz = () => {
     setQuizStage('setup');
   };
 
-  const categories = ['Todas', 'Pratique', 'Anatomia Muscular', 'Cinesiologia', 'Planos Anatômicos', 'Análise Biomecânica', 'Exercícios', 'Anamnese', 'Bioenergética', 'Pulseira Verde'];
+  const categories = ['Todas', 'Pratique', 'Anatomia Muscular', 'Cinesiologia', 'Planos Anatômicos', 'Análise Biomecânica', 'Exercícios', 'Anamnese', 'Bioenergética', 'Pulseira Verde', 'Pulseira Vermelha'];
   const counts = [5, 10, 15, 20, 30, 'Todas'];
 
   if (quizStage === 'setup') {
