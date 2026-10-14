@@ -56,8 +56,7 @@ export const MUSCLES = [
       { name: 'Pullover com Halter', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2018/10/pullover-com-halteres-no-banco-horizontal.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro'] },
       { name: 'Barra Fixa Supinada', gif: 'https://www.hipertrofia.org/blog/wp-content/uploads/2023/10/band-assisted-pullup.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Cotovelo', 'Extensão de Ombro'] },
 
-      { name: 'Puxada Braços Estendidos', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/puxada-com-bracos-estendidos.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro'] },
-      { name: 'Puxada Triângulo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/puxada-pulley-triangulo.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro', 'Flexão de Cotovelo'] }
+      { name: 'Puxada Triângulo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/costas-puxada-para-frente-no-pulley-com-triangulo.gif', isRealGif: true, plane: 'Sagital', movements: ['Extensão de Ombro', 'Flexão de Cotovelo'] }
     ]
   },
   // Trapézios
@@ -224,51 +223,8 @@ export const MUSCLES = [
       { name: 'Panturrilha Leg Press', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2021/03/Panturrilha-no-leg-press.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão Plantar'] },
     ]
   },
-  // Alongamentos
-  {
-    id: 'alongamentos',
-    name: 'Alongamentos',
-    region: 'Mobilidade',
-    image: null,
-    composition: 'Fibras musculares e tecido conjuntivo em estiramento.',
-    action: 'Aumento da flexibilidade.',
-    plane: 'Múltiplos',
-    exercises: [
-      { name: 'Alongamento Isquiotibiais', gif: 'https://api.smartworkout.app/asset/image/19a0f2b7-f61f-488d-ac28-89bc9b94d192', isRealGif: true, plane: 'Sagital', movements: ['Estiramento Posterior'] },
-      { name: 'Postura da Criança', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/postura-da-crianca.gif', isRealGif: true, plane: 'Sagital', movements: ['Estiramento Lombar'] },
-      { name: 'Alongamento Peitoral', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/alongamento-peitoral-parede.gif', isRealGif: true, plane: 'Frontal', movements: ['Estiramento Peitoral'] }
-    ]
-  },
-  // Cardio e HIIT
-  {
-    id: 'cardio',
-    name: 'Cardio e HIIT',
-    region: 'Corpo Inteiro',
-    image: null,
-    composition: 'Sistema cardiovascular e musculoesquelético.',
-    action: 'Alta intensidade e queima calórica.',
-    plane: 'Múltiplos',
-    exercises: [
-      { name: 'Polichinelo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/polichinelo.gif', isRealGif: true, plane: 'Frontal', movements: ['Salto'] },
-      { name: 'Burpee', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/burpee.gif', isRealGif: true, plane: 'Sagital', movements: ['Composto'] },
-      { name: 'Mountain Climber', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/escalador-mountain-climber.gif', isRealGif: true, plane: 'Sagital', movements: ['Flexão de Quadril'] },
-      { name: 'Corrida no Lugar', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/corrida-estacionaria-joelhos-altos.gif', isRealGif: true, plane: 'Sagital', movements: ['Corrida'] },
-      { name: 'Pular Corda', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/pular-corda.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] },
-      { name: 'Salto em Caixa', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/salto-na-caixa.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] },
-      { name: 'Sprint', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/corrida-sprint.gif', isRealGif: true, plane: 'Sagital', movements: ['Corrida'] },
-      { name: 'Jump Squat', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/agachamento-com-salto.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] },
-      { name: 'Skater Jumps', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/salto-lateral-skater-jump.gif', isRealGif: true, plane: 'Frontal', movements: ['Salto Lateral'] },
-      { name: 'Polichinelo Cruzado', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/polichinelo-cruzado.gif', isRealGif: true, plane: 'Frontal', movements: ['Salto'] },
-      { name: 'Step Up', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/subida-no-banco-step-up.gif', isRealGif: true, plane: 'Sagital', movements: ['Subida'] },
-      { name: 'Prancha Jack', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/prancha-jack.gif', isRealGif: true, plane: 'Frontal', movements: ['Salto'] },
-      { name: 'Calcanhar no Glúteo', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/corrida-estacionaria-calcanhar-no-gluteo.gif', isRealGif: true, plane: 'Sagital', movements: ['Corrida'] },
-      { name: 'Polisapato', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/polisapato.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] },
-      { name: 'Agachamento Lateral Salto', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/agachamento-com-salto-lateral.gif', isRealGif: true, plane: 'Frontal', movements: ['Salto'] },
-      { name: 'Shadow Boxing', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/shadow-boxing.gif', isRealGif: true, plane: 'Múltiplos', movements: ['Soco'] },
-      { name: 'Pulo Corda Cruzado', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/pular-corda-cruzado.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] },
-      { name: 'Avanço com Salto', gif: 'https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/avanco-com-salto.gif', isRealGif: true, plane: 'Sagital', movements: ['Salto'] }
-    ]
-  }
+
+
 ];
 
 export const PLANES = [

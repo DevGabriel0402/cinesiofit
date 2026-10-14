@@ -11,6 +11,7 @@ import {
   DIABETES_PRESCRICAO,
   HIPERTENSAO_PRESCRICAO
 } from '../../dataPulseiraVermelha';
+import { QUIZ_QUESTIONS } from '../../quizData';
 
 // ─────────────────────────────────────────────
 //  ESTILOS
@@ -123,6 +124,43 @@ const getSafeImg = (url) => {
   if (url.startsWith('data:') || url.startsWith('/')) return url;
   return `https://wsrv.nl/?url=${encodeURIComponent(url)}&output=jpg&bg=white&w=240`;
 };
+
+const OPT_LETTERS = ['A', 'B', 'C', 'D'];
+
+const PdfQuizCard = ({ q, index, color = '#059669' }) => (
+  <View style={[s.card, { marginBottom: 6, padding: '6 8' }]} wrap={false}>
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 2 }}>
+      <Text style={{ fontSize: 7, fontWeight: 'bold', color: color, backgroundColor: color === '#059669' ? '#d1fae5' : '#ffe4e6', padding: '1 5', borderRadius: 3 }}>
+        Questão {index + 1}
+      </Text>
+      <Text style={{ fontSize: 6.5, color: '#64748b', fontWeight: 'bold' }}>{q.category}</Text>
+    </View>
+    <Text style={{ fontSize: 7.5, fontWeight: 'bold', color: '#0f172a', marginBottom: 3, lineHeight: 1.25 }}>
+      {q.question}
+    </Text>
+    <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 4, marginBottom: 3 }}>
+      {q.options.map((opt, oi) => {
+        const isCorrect = oi === q.correctAnswer;
+        return (
+          <View key={oi} style={{ width: '48%', flexDirection: 'row', alignItems: 'center', backgroundColor: isCorrect ? '#f0fdf4' : '#ffffff', borderWidth: 0.5, borderColor: isCorrect ? '#86efac' : '#e2e8f0', borderRadius: 3, padding: '2 4' }}>
+            <Text style={{ fontSize: 6.5, fontWeight: 'bold', color: isCorrect ? '#047857' : '#64748b', width: 12 }}>
+              {OPT_LETTERS[oi]}
+            </Text>
+            <Text style={{ fontSize: 6, color: isCorrect ? '#047857' : '#334155', fontWeight: isCorrect ? 'bold' : 'normal', flex: 1, lineHeight: 1.2 }}>
+              {opt} {isCorrect ? '✓' : ''}
+            </Text>
+          </View>
+        );
+      })}
+    </View>
+    {q.explanation && (
+      <View style={{ backgroundColor: '#f8fafc', borderLeftWidth: 2, borderLeftColor: '#0284c7', padding: '2 5' }}>
+        <Text style={{ fontSize: 6, color: '#0369a1', fontWeight: 'bold' }}>💡 Explicação Científica:</Text>
+        <Text style={{ fontSize: 6, color: '#334155', lineHeight: 1.25 }}>{q.explanation}</Text>
+      </View>
+    )}
+  </View>
+);
 
 // ─────────────────────────────────────────────
 //  PULSEIRA VERDE
@@ -274,6 +312,26 @@ const PulseiraVerdePages = () => (
         </View>
       ))}
 
+      <Footer scopeName="Pulseira Verde" />
+    </Page>
+
+    {/* ── Banco de Questões de Validação com Gabarito ── */}
+    <Page size="A4" style={s.page}>
+      <View style={[s.sectionHeader, { borderBottomColor: '#059669' }]}>
+        <Text style={s.sectionTitle}>Banco de Questões: Pulseira Verde</Text>
+        <Text style={[s.sectionBadge, { backgroundColor: '#059669' }]}>GABARITO & EXPLICAÇÕES</Text>
+      </View>
+      <Text style={{ fontSize: 8, color: '#475569', marginBottom: 6 }}>
+        Questões oficiais cobradas na validação da Pulseira Verde (Bioenergética, Atendimento Pratique e os 10 Exercícios) com gabarito comentado.
+      </Text>
+      {QUIZ_QUESTIONS.filter(q => 
+        q.category === 'Pulseira Verde' || 
+        q.category === 'Bioenergética' ||
+        (q.category === 'Pratique' && [118, 119, 120].includes(q.id)) ||
+        q.category === 'Anamnese'
+      ).map((q, idx) => (
+        <PdfQuizCard key={q.id} q={q} index={idx} color="#059669" />
+      ))}
       <Footer scopeName="Pulseira Verde" />
     </Page>
   </>
@@ -534,19 +592,74 @@ const PulseiraVermelhaPages = () => (
       <Text style={{ fontSize: 9, fontWeight: 'bold', marginTop: 8, marginBottom: 5, color: '#0d1117' }}>
         Cuidados Críticos de Segurança
       </Text>
-      {HIPERTENSAO_PRESCRICAO.protocoloSeguranca && HIPERTENSAO_PRESCRICAO.protocoloSeguranca.map((item, i) => (
+      {(HIPERTENSAO_PRESCRICAO.protocolosSegurancaCriticos || []).map((item, i) => (
         <View key={i} style={[s.accentCard, {
           borderLeftColor: item.critico ? '#be123c' : '#059669',
           backgroundColor: item.critico ? '#fff1f2' : '#f0fdf4',
           marginBottom: 5
         }]}>
           <Text style={[s.cardTitle, { color: item.critico ? '#be123c' : '#047857' }]}>
-            {item.critico ? '🚫 ' : '✓ '}{item.regra}
+            {item.critico ? '🚫 ' : '✓ '}{item.titulo}
           </Text>
           <Text style={s.bullet}>{item.texto}</Text>
         </View>
       ))}
 
+      <Footer scopeName="Pulseira Vermelha" />
+    </Page>
+
+    {/* ── Guia Rápido e Regras de Ouro ── */}
+    <Page size="A4" style={s.page}>
+      <View style={[s.sectionHeader, { borderBottomColor: '#be123c' }]}>
+        <Text style={s.sectionTitle}>Guia Rápido & Regras de Ouro de Prescrição</Text>
+        <Text style={[s.sectionBadge, { backgroundColor: '#be123c' }]}>PRANQUETA DO PROFESSOR</Text>
+      </View>
+
+      <View style={[s.accentCard, { borderLeftColor: '#be123c', backgroundColor: '#fff1f2', marginBottom: 7 }]}>
+        <Text style={[s.cardTitle, { color: '#9f1239' }]}>REGRA 1: Método PSF (Pouco, Simples e Fácil)</Text>
+        <Text style={s.bullet}>Mantenha a PSE ≤ 4 a 5 (escala de 0 a 10) para alunos iniciantes, diabéticos e hipertensos. O foco é consolidação de hábito e saúde.</Text>
+      </View>
+
+      <View style={[s.accentCard, { borderLeftColor: '#be123c', backgroundColor: '#fff1f2', marginBottom: 7 }]}>
+        <Text style={[s.cardTitle, { color: '#9f1239' }]}>REGRA 2: Abolição Total da Manobra de Valsalva</Text>
+        <Text style={s.bullet}>Expirar na fase concêntrica e inspirar na excêntrica. O bloqueio de respiração provoca picos pressóricos perigosos.</Text>
+      </View>
+
+      <View style={[s.accentCard, { borderLeftColor: '#be123c', backgroundColor: '#fff1f2', marginBottom: 7 }]}>
+        <Text style={[s.cardTitle, { color: '#9f1239' }]}>REGRA 3: Monitoramento Glicêmico Pré-Treino</Text>
+        <Text style={s.bullet}>Glicemia &lt; 100 mg/dL: Ingerir 15 a 30 g de carboidratos simples antes. Glicemia &gt; 200 mg/dL corrigida com insulina rápida: esperar 90 minutos.</Text>
+      </View>
+
+      <View style={[s.accentCard, { borderLeftColor: '#be123c', backgroundColor: '#fff1f2', marginBottom: 7 }]}>
+        <Text style={[s.cardTitle, { color: '#9f1239' }]}>REGRA 4: Ponto de Corte Crítico de Pressão Arterial</Text>
+        <Text style={s.bullet}>PAS ≥ 200 mmHg ou PAD ≥ 115 mmHg: treino CANCELADO na sessão. Repouso imediato e encaminhamento médico.</Text>
+      </View>
+
+      <View style={[s.accentCard, { borderLeftColor: '#be123c', backgroundColor: '#fff1f2', marginBottom: 7 }]}>
+        <Text style={[s.cardTitle, { color: '#9f1239' }]}>REGRA 5: Beta-Bloqueadores e Frequência Cardíaca</Text>
+        <Text style={s.bullet}>Medicamentos beta-bloqueadores atenuam a elevação da FC. Use sempre a Escala de PSE (Borg ≤ 4) em vez de frequencímetro.</Text>
+      </View>
+
+      <View style={[s.accentCard, { borderLeftColor: '#be123c', backgroundColor: '#fff1f2', marginBottom: 7 }]}>
+        <Text style={[s.cardTitle, { color: '#9f1239' }]}>REGRA 6: Manipulação do Braço de Resistência (BR) na Fadiga</Text>
+        <Text style={s.bullet}>Flexionar articulações intermediárias (ex.: cotovelos ou joelhos) encurta o BR, facilitando o movimento para concluir as repetições com a mesma carga em segurança.</Text>
+      </View>
+
+      <Footer scopeName="Pulseira Vermelha" />
+    </Page>
+
+    {/* ── Banco de Questões da Pulseira Vermelha com Gabarito ── */}
+    <Page size="A4" style={s.page}>
+      <View style={[s.sectionHeader, { borderBottomColor: '#be123c' }]}>
+        <Text style={s.sectionTitle}>Banco de Questões: Pulseira Vermelha</Text>
+        <Text style={[s.sectionBadge, { backgroundColor: '#be123c' }]}>GABARITO & EXPLICAÇÕES</Text>
+      </View>
+      <Text style={{ fontSize: 8, color: '#475569', marginBottom: 6 }}>
+        Questões oficiais da avaliação avançada (Princípios do Treinamento, SAG, Alavancas Biomecânicas, Diabetes e Hipertensão) com gabarito e justificativa científica.
+      </Text>
+      {QUIZ_QUESTIONS.filter(q => q.category === 'Pulseira Vermelha').map((q, idx) => (
+        <PdfQuizCard key={q.id} q={q} index={idx} color="#e11d48" />
+      ))}
       <Footer scopeName="Pulseira Vermelha" />
     </Page>
   </>

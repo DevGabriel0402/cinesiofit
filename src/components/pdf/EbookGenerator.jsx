@@ -8,11 +8,17 @@ import {
   Activity, 
   BookOpen, 
   CheckCircle2, 
-  Download, 
-  Sparkles,
-  Info,
+  Download,
   Layers,
-  ChevronRight
+  GraduationCap,
+  Heart,
+  Zap,
+  Shield,
+  Info,
+  AlertTriangle,
+  Check,
+  HelpCircle,
+  Sparkles
 } from 'lucide-react';
 import { pdf } from '@react-pdf/renderer';
 import { EbookDocument } from './EbookDocument';
@@ -25,6 +31,8 @@ import {
   HIPERTENSAO_PRESCRICAO 
 } from '../../dataPulseiraVermelha';
 import { MUSCLES, PLANES, MOVEMENTS } from '../../data';
+import { QUIZ_QUESTIONS } from '../../quizData';
+import { PrintCover, PrintVerdeSection, PrintVermelhaSection, PrintMusclesSection } from './PrintSections';
 import toast from 'react-hot-toast';
 
 const Container = styled.div`
@@ -376,105 +384,629 @@ const PrintableDocument = styled.div`
 
   @media print {
     display: block !important;
-    background: white;
-    color: black;
-    font-family: 'Inter', -apple-system, sans-serif;
+    background: #ffffff;
+    color: #0f172a;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.4;
     padding: 0;
     margin: 0;
 
     @page {
       size: A4;
-      margin: 1.5cm;
-    }
-
-    .print-header {
-      border-bottom: 3px solid #0f172a;
-      padding-bottom: 12px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-
-      h1 {
-        font-size: 24pt;
-        font-weight: 900;
-        margin: 0;
-        color: #0f172a;
-      }
-      p {
-        margin: 4px 0 0 0;
-        font-size: 10pt;
-        color: #475569;
-      }
-      .print-tag {
-        font-size: 9pt;
-        font-weight: 800;
-        text-transform: uppercase;
-        color: #0f172a;
-      }
-    }
-
-    .print-section-title {
-      font-size: 14pt;
-      font-weight: 800;
-      margin: 20px 0 10px 0;
-      border-bottom: 1.5px solid #cbd5e1;
-      padding-bottom: 4px;
-      color: #0f172a;
-      page-break-after: avoid;
-    }
-
-    .print-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 16px;
-      font-size: 9pt;
-
-      th {
-        background: #f1f5f9;
-        color: #0f172a;
-        font-weight: 800;
-        text-align: left;
-        padding: 6px 8px;
-        border: 1px solid #cbd5e1;
-      }
-
-      td {
-        padding: 6px 8px;
-        border: 1px solid #e2e8f0;
-        color: #334155;
-      }
-    }
-
-    .print-card {
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      padding: 10px;
-      margin-bottom: 12px;
-      page-break-inside: avoid;
-
-      h3 {
-        font-size: 11pt;
-        font-weight: 800;
-        margin: 0 0 4px 0;
-        color: #0f172a;
-      }
-      p {
-        font-size: 9pt;
-        margin: 2px 0;
-        color: #334155;
-      }
+      margin: 1.2cm 1.3cm 1.3cm 1.3cm;
     }
 
     .page-break {
       page-break-before: always;
+      break-before: page;
+    }
+
+    .avoid-break {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    /* ── CAPA DE IMPRESSÃO ── */
+    .print-cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 88vh;
+      text-align: center;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 3.5rem 2.5rem;
+      position: relative;
+      background: #fafafa;
+      box-sizing: border-box;
+    }
+
+    .cover-stripe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .cover-header-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      .brand-logo {
+        font-size: 11pt;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: #0f172a;
+      }
+      .brand-sub {
+        font-size: 8.5pt;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+
+    .cover-body {
+      margin: 2.5rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .cover-badge {
+        display: inline-block;
+        padding: 5px 16px;
+        border-radius: 20px;
+        border: 1.5px solid;
+        font-size: 9pt;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+      }
+
+      .cover-title {
+        font-size: 26pt;
+        font-weight: 900;
+        margin: 0 0 10px 0;
+        letter-spacing: -0.5px;
+        line-height: 1.15;
+      }
+
+      .cover-subtitle {
+        font-size: 11pt;
+        color: #475569;
+        max-width: 460px;
+        margin: 0 auto 2rem auto;
+        line-height: 1.4;
+      }
+
+      .cover-topics-box {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 14px 20px;
+        max-width: 480px;
+        width: 100%;
+        text-align: left;
+
+        .topics-title {
+          display: block;
+          font-size: 8.5pt;
+          font-weight: 800;
+          color: #0f172a;
+          text-transform: uppercase;
+          margin-bottom: 8px;
+          border-bottom: 1px solid #f1f5f9;
+          padding-bottom: 4px;
+        }
+
+        .topics-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 6px;
+        }
+
+        .topic-pill {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 8pt;
+          color: #334155;
+          font-weight: 600;
+
+          .pill-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+
+    .cover-footer-meta {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 14px;
+      font-size: 8pt;
+      color: #64748b;
+      line-height: 1.5;
+      width: 100%;
+      .cover-date {
+        margin-top: 4px;
+        font-weight: 600;
+        color: #94a3b8;
+      }
+    }
+
+    /* ── CABEÇALHOS DE SEÇÃO COM BANNER ── */
+    .section-title-banner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      font-size: 11pt;
+      font-weight: 800;
+      margin: 18px 0 10px 0;
+      page-break-after: avoid;
+
+      &.verde-theme {
+        background: #ecfdf5;
+        color: #047857;
+        border-left: 4px solid #10b981;
+      }
+
+      &.vermelha-theme {
+        background: #fff1f2;
+        color: #be123c;
+        border-left: 4px solid #e11d48;
+      }
+
+      &.dark-theme {
+        background: #f1f5f9;
+        color: #0f172a;
+        border-left: 4px solid #0f172a;
+      }
+    }
+
+    .section-intro-text {
+      font-size: 8.5pt;
+      color: #475569;
+      margin: 4px 0 10px 0;
+      line-height: 1.35;
+    }
+
+    /* ── TABELAS DE IMPRESSÃO ── */
+    .print-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+      font-size: 8pt;
+
+      th {
+        background: #0f172a;
+        color: #ffffff;
+        font-weight: 700;
+        text-align: left;
+        padding: 5px 8px;
+        border: 1px solid #0f172a;
+        font-size: 7.5pt;
+        text-transform: uppercase;
+      }
+
+      td {
+        padding: 5px 8px;
+        border: 1px solid #e2e8f0;
+        color: #334155;
+        line-height: 1.3;
+      }
+
+      tbody tr:nth-child(even) {
+        background: #f8fafc;
+      }
+
+      .table-plane-tag {
+        display: inline-block;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 7.5pt;
+        font-weight: 700;
+        background: #e0f2fe;
+        color: #0369a1;
+      }
+    }
+
+    /* ── CARDS E BOXES ── */
+    .print-box-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+
+      &.verde-border {
+        border-left: 3.5px solid #10b981;
+      }
+      &.vermelha-border {
+        border-left: 3.5px solid #e11d48;
+      }
+
+      .card-box-title {
+        font-size: 9pt;
+        font-weight: 800;
+        margin: 0 0 4px 0;
+      }
+
+      .card-bullets-list {
+        margin: 0;
+        padding-left: 14px;
+        font-size: 8pt;
+        color: #334155;
+        li {
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    .print-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    /* ── 10 EXERCÍCIOS OFICIAIS ── */
+    .exercises-detailed-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .exercise-print-card {
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #10b981;
+      border-radius: 6px;
+      padding: 8px 10px;
+      background: #ffffff;
+
+      .ex-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 6px;
+        border-bottom: 1px solid #f1f5f9;
+        padding-bottom: 4px;
+
+        .ex-number-badge {
+          background: #10b981;
+          color: white;
+          font-size: 8pt;
+          font-weight: 800;
+          padding: 2px 7px;
+          border-radius: 4px;
+        }
+
+        .ex-name {
+          font-size: 9.5pt;
+          font-weight: 800;
+          color: #0f172a;
+          flex: 1;
+        }
+
+        .ex-plane-tag {
+          font-size: 7.5pt;
+          font-weight: 700;
+          color: #065f46;
+          background: #d1fae5;
+          padding: 2px 6px;
+          border-radius: 4px;
+        }
+      }
+
+      .ex-grid-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px 10px;
+        font-size: 8pt;
+
+        .ex-field {
+          .field-lbl {
+            font-weight: 700;
+            color: #475569;
+            margin-right: 4px;
+          }
+          .field-val {
+            color: #1e293b;
+          }
+          .highlight-sub {
+            color: #b45309;
+            font-weight: 600;
+          }
+          .pac-text {
+            color: #047857;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .ex-phases-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 6px;
+        padding-top: 5px;
+        border-top: 1px dashed #e2e8f0;
+        font-size: 7.5pt;
+
+        .phase-col {
+          .phase-lbl {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 1px;
+          }
+          &.conc-col .phase-lbl { color: #047857; }
+          &.exc-col .phase-lbl { color: #be123c; }
+          .phase-desc { color: #475569; }
+        }
+      }
+    }
+
+    /* ── PRINCÍPIOS CARD ── */
+    .principle-print-card {
+      border: 1px solid #e2e8f0;
+      border-left: 3.5px solid #be123c;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+      background: #ffffff;
+
+      .prin-title {
+        font-size: 9pt;
+        font-weight: 800;
+        color: #be123c;
+        margin: 0 0 3px 0;
+      }
+      .prin-concept {
+        font-size: 8pt;
+        color: #1e293b;
+        margin: 2px 0;
+      }
+      .prin-mistake {
+        font-size: 8pt;
+        color: #991b1b;
+        margin: 2px 0;
+      }
+      .prin-gold {
+        font-size: 8pt;
+        color: #9f1239;
+        font-weight: 700;
+        margin: 3px 0;
+      }
+      .prin-alert {
+        font-size: 8pt;
+        color: #b91c1c;
+        font-weight: 600;
+        margin: 2px 0;
+      }
+    }
+
+    .carga-components-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      .carga-comp-pill {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        padding: 4px 6px;
+        border-radius: 4px;
+        font-size: 7.5pt;
+        color: #334155;
+      }
+    }
+
+    /* ── ALAVANCAS BIOMECÂNICAS ── */
+    .alavanca-components-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+
+      .alavanca-comp-box {
+        background: #fff1f2;
+        border: 1px solid #fecdd3;
+        border-radius: 6px;
+        padding: 6px 8px;
+        display: flex;
+        flex-direction: column;
+
+        .alavanca-sigla {
+          font-size: 12pt;
+          font-weight: 900;
+          color: #be123c;
+        }
+        .alavanca-nome {
+          font-size: 8pt;
+          font-weight: 700;
+          color: #0f172a;
+        }
+        .alavanca-anat {
+          font-size: 7.5pt;
+          color: #64748b;
+        }
+      }
+    }
+
+    /* ── GUIA RÁPIDO BOXES ── */
+    .quick-rules-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .quick-rule-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px 10px;
+      background: #fafafa;
+      position: relative;
+
+      .q-badge {
+        font-size: 7pt;
+        font-weight: 800;
+        color: #be123c;
+        background: #ffe4e6;
+        padding: 1px 6px;
+        border-radius: 3px;
+        display: inline-block;
+        margin-bottom: 3px;
+      }
+      h4 {
+        margin: 0 0 2px 0;
+        font-size: 8.5pt;
+        font-weight: 800;
+        color: #0f172a;
+      }
+      p {
+        margin: 0;
+        font-size: 7.5pt;
+        color: #475569;
+        line-height: 1.3;
+      }
+    }
+
+    /* ── BANCO DE QUESTÕES DO QUIZ COM GABARITO & EXPLICAÇÃO ── */
+    .quiz-print-container {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .print-quiz-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 10px;
+      background: #ffffff;
+      box-shadow: none;
+
+      .quiz-card-head {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 4px;
+
+        .quiz-badge {
+          color: white;
+          font-size: 7.5pt;
+          font-weight: 800;
+          padding: 1px 6px;
+          border-radius: 3px;
+        }
+
+        .quiz-category {
+          font-size: 7.5pt;
+          font-weight: 700;
+          color: #64748b;
+          text-transform: uppercase;
+        }
+      }
+
+      .quiz-question-text {
+        font-size: 8.5pt;
+        color: #0f172a;
+        margin-bottom: 6px;
+        line-height: 1.35;
+      }
+
+      .quiz-options-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px 8px;
+        margin-bottom: 6px;
+
+        .quiz-option-item {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          padding: 3px 6px;
+          border-radius: 4px;
+          border: 1px solid #f1f5f9;
+          font-size: 7.5pt;
+          color: #475569;
+
+          .option-letter {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            color: #475569;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 6.5pt;
+            flex-shrink: 0;
+          }
+
+          .option-text {
+            flex: 1;
+            line-height: 1.25;
+          }
+
+          &.correct-option {
+            background: #f0fdf4;
+            border-color: #86efac;
+            color: #14532d;
+            font-weight: 700;
+
+            .letter-correct {
+              background: #10b981;
+              color: white;
+            }
+
+            .correct-tag {
+              font-size: 6.5pt;
+              background: #dcfce7;
+              color: #15803d;
+              padding: 1px 4px;
+              border-radius: 3px;
+              font-weight: 800;
+              margin-left: 4px;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+
+      .quiz-explanation-box {
+        background: #f8fafc;
+        border-left: 3px solid #0284c7;
+        padding: 4px 8px;
+        border-radius: 0 4px 4px 0;
+        font-size: 7.5pt;
+
+        .explanation-title {
+          font-weight: 700;
+          color: #0369a1;
+          margin-bottom: 1px;
+        }
+        .explanation-desc {
+          margin: 0;
+          color: #334155;
+          line-height: 1.3;
+        }
+      }
     }
 
     .print-footer {
-      margin-top: 30px;
+      margin-top: 24px;
       border-top: 1px solid #cbd5e1;
       padding-top: 8px;
-      font-size: 8pt;
+      font-size: 7.5pt;
       color: #64748b;
       text-align: center;
     }
@@ -685,24 +1217,31 @@ export const EbookGenerator = ({ onSelectScope }) => {
               <>
                 <div className="content-row">
                   <div className="row-title">
-                    <Award size={18} color="#10b981" />
-                    <span>Os 10 Exercícios da Validação Prática</span>
+                    <Zap size={18} color="#10b981" />
+                    <span>Estudo Teórico & Bioenergética</span>
                   </div>
-                  <span className="row-detail">Supino, Desenvolvimento, Pulley, Agachamento, etc.</span>
+                  <span className="row-detail">ATP-CP, Glicolítico, Oxidativo, Métodos CORE, PAC, ERE e PAR-Q</span>
                 </div>
                 <div className="content-row">
                   <div className="row-title">
                     <Layers size={18} color="#10b981" />
                     <span>Planos Anatômicos & Movimentos</span>
                   </div>
-                  <span className="row-detail">Sagital, Frontal, Transversal + 10 movimentos</span>
+                  <span className="row-detail">Sagital, Frontal, Transversal + 10 movimentos e eixos</span>
                 </div>
                 <div className="content-row">
                   <div className="row-title">
-                    <Info size={18} color="#10b981" />
-                    <span>Metodologia Pratique & Bioenergética</span>
+                    <Award size={18} color="#10b981" />
+                    <span>Os 10 Exercícios da Validação Prática</span>
                   </div>
-                  <span className="row-detail">Método CORE, Checklist PAC, Feedback ERE, PAR-Q</span>
+                  <span className="row-detail">Supino, Desenvolvimento, Pulley, Extensora, Leg 45°, etc.</span>
+                </div>
+                <div className="content-row">
+                  <div className="row-title">
+                    <CheckCircle2 size={18} color="#10b981" />
+                    <span>Banco de Questões com Respostas e Explicações</span>
+                  </div>
+                  <span className="row-detail">49 questões oficiais com respostas corretas e justificativas</span>
                 </div>
               </>
             )}
@@ -714,28 +1253,42 @@ export const EbookGenerator = ({ onSelectScope }) => {
                     <Award size={18} color="#e11d48" />
                     <span>Princípios do Treinamento Físico</span>
                   </div>
-                  <span className="row-detail">Carga x Peso, Individualidade, Sobrecarga, Reversibilidade</span>
-                </div>
-                <div className="content-row">
-                  <div className="row-title">
-                    <Activity size={18} color="#e11d48" />
-                    <span>Síndrome de Adaptação Geral (SAG)</span>
-                  </div>
-                  <span className="row-detail">Alarme, Resistência, Exaustão e Supercompensação</span>
+                  <span className="row-detail">Carga x Peso (5 variáveis), SAG, Sobrecarga, Especificidade e Continuidade</span>
                 </div>
                 <div className="content-row">
                   <div className="row-title">
                     <Layers size={18} color="#e11d48" />
-                    <span>Alavancas Biomecânicas & Braço de Resistência</span>
+                    <span>Biomecânica Avançada & Alavancas</span>
                   </div>
-                  <span className="row-detail">1ª, 2ª e 3ª classes, Torque e estresse articular</span>
+                  <span className="row-detail">1ª, 2ª e 3ª classes, manipulação do Braço de Resistência (BR) e torque</span>
+                </div>
+                <div className="content-row">
+                  <div className="row-title">
+                    <Heart size={18} color="#e11d48" />
+                    <span>Segurança Clínica: Diabetes & Insulina</span>
+                  </div>
+                  <span className="row-detail">Analogia do chaveiro, glicemia pré-treino, condutas de segurança e PSF</span>
+                </div>
+                <div className="content-row">
+                  <div className="row-title">
+                    <Shield size={18} color="#e11d48" />
+                    <span>Segurança Clínica: Hipertensão Arterial (HAS)</span>
+                  </div>
+                  <span className="row-detail">Abolição de Valsalva, ponto de corte 200/115 mmHg, PSE e beta-bloqueadores</span>
+                </div>
+                <div className="content-row">
+                  <div className="row-title">
+                    <Sparkles size={18} color="#e11d48" />
+                    <span>Guia Rápido & Regras de Ouro na Sala</span>
+                  </div>
+                  <span className="row-detail">Checklist executivo de bolso para consulta imediata do treinador</span>
                 </div>
                 <div className="content-row">
                   <div className="row-title">
                     <CheckCircle2 size={18} color="#e11d48" />
-                    <span>Segurança Clínica: Diabetes & Hipertensão</span>
+                    <span>Banco de Questões com Respostas e Explicações</span>
                   </div>
-                  <span className="row-detail">Manobra de Valsalva, isometria e hipoglicemia</span>
+                  <span className="row-detail">31 questões oficiais com respostas corretas e justificativas científicas</span>
                 </div>
               </>
             )}
@@ -771,16 +1324,16 @@ export const EbookGenerator = ({ onSelectScope }) => {
                 <div className="content-row">
                   <div className="row-title">
                     <Award size={18} color="#10b981" />
-                    <span>Módulo Pulseira Verde</span>
+                    <span>Módulo Pulseira Verde Integral</span>
                   </div>
-                  <span className="row-detail">Planos, Movimentos e 10 Exercícios Oficiais</span>
+                  <span className="row-detail">Teoria, Planos, Movimentos, 10 Exercícios e Questões com Respostas</span>
                 </div>
                 <div className="content-row">
                   <div className="row-title">
                     <Award size={18} color="#e11d48" />
-                    <span>Módulo Pulseira Vermelha</span>
+                    <span>Módulo Pulseira Vermelha Integral</span>
                   </div>
-                  <span className="row-detail">Princípios, Alavancas e Casos Clínicos</span>
+                  <span className="row-detail">Princípios, Biomecânica, Diabetes, HAS, Guia Rápido e Questões com Respostas</span>
                 </div>
                 <div className="content-row">
                   <div className="row-title">
@@ -797,174 +1350,36 @@ export const EbookGenerator = ({ onSelectScope }) => {
 
       {/* DOCUMENTO RENDERIZADO EXCLUSIVAMENTE QUANDO O USUÁRIO APERTA "IMPRIMIR AGORA" (window.print()) */}
       <PrintableDocument>
-        {/* CABEÇALHO DO DOCUMENTO DE IMPRESSÃO */}
-        <div className="print-header">
-          <div>
-            <h1>CinesioFit • {currentScopeObj.title}</h1>
-            <p>{currentScopeObj.subtitle}</p>
-          </div>
-          <div className="print-tag">UniPower & Pratique Fitness</div>
-        </div>
+        {/* CAPA ELEGANTE PERSONALIZADA PELO ESCOPO */}
+        <PrintCover 
+          title={currentScopeObj.title}
+          subtitle={currentScopeObj.subtitle}
+          badge={currentScopeObj.badge}
+          color={currentScopeObj.color}
+          topics={currentScopeObj.topics}
+        />
 
         {/* IMPRESSÃO DA PULSEIRA VERDE */}
         {(selectedScope === 'verde' || selectedScope === 'all') && (
-          <div>
-            <div className="print-section-title">1. Os 10 Exercícios Oficiais de Validação da Pulseira Verde</div>
-            <table className="print-table">
-              <thead>
-                <tr>
-                  <th style={{ width: '4%' }}>#</th>
-                  <th style={{ width: '22%' }}>Exercício</th>
-                  <th style={{ width: '14%' }}>Plano</th>
-                  <th style={{ width: '25%' }}>Movimento Articular</th>
-                  <th style={{ width: '20%' }}>Músculos Ativados</th>
-                  <th style={{ width: '15%' }}>Substituição</th>
-                </tr>
-              </thead>
-              <tbody>
-                {EXERCICIOS_PULSEIRA_VERDE.map((ex) => (
-                  <tr key={ex.id}>
-                    <td><strong>{ex.id}</strong></td>
-                    <td><strong>{ex.nome}</strong></td>
-                    <td>{ex.plano}</td>
-                    <td>{ex.movimento}</td>
-                    <td>{ex.grupoMuscular}</td>
-                    <td>{ex.substituicao}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            <div className="print-section-title">2. Planos Anatômicos & Movimentos Fundamentais</div>
-            <table className="print-table">
-              <thead>
-                <tr>
-                  <th>Plano</th>
-                  <th>Eixo</th>
-                  <th>Divisão Corporal</th>
-                  <th>Movimentos Associados</th>
-                </tr>
-              </thead>
-              <tbody>
-                {PLANES.map((p) => (
-                  <tr key={p.id}>
-                    <td><strong>{p.name}</strong></td>
-                    <td>{p.axis}</td>
-                    <td>{p.division}</td>
-                    <td>{p.movements.join(', ')}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            <div className="print-section-title">3. Metodologia Pratique Fitness & Atendimento</div>
-            <div className="print-card">
-              <h3>Método CORE no Salão de Musculação</h3>
-              <p>• <strong>C</strong>ircular: Monitorar ativamente todo o salão da academia.</p>
-              <p>• <strong>O</strong>portunidade: Identificar necessidades e erros de execução prontamente.</p>
-              <p>• <strong>R</strong>estaurar: Corrigir a postura e técnica do aluno com segurança e empatia.</p>
-              <p>• <strong>E</strong>logiar: Parabenizar a dedicação e o empenho do aluno.</p>
-            </div>
-            <div className="print-card">
-              <h3>Critérios de Execução PAC & Feedback ERE</h3>
-              <p>• <strong>PAC</strong>: Postura (alinhamento articular), Amplitude (arco completo), Cadência (controle excêntrico/concêntrico).</p>
-              <p>• <strong>ERE</strong>: Elogiar o esforço inicial, Restaurar o erro técnico e Elogiar a nova execução corrigida.</p>
-            </div>
-          </div>
+          <PrintVerdeSection />
         )}
 
         {/* IMPRESSÃO DA PULSEIRA VERMELHA */}
         {(selectedScope === 'vermelha' || selectedScope === 'all') && (
           <div className={selectedScope === 'all' ? 'page-break' : ''}>
-            <div className="print-section-title">Módulo Pulseira Vermelha: Princípios do Treinamento & Biomecânica</div>
-
-            <div className="print-card">
-              <h3>Carga de Treinamento vs Peso</h3>
-              <p>Carga é o estímulo total capaz de quebrar a homeostase. O peso (quilagem) é apenas uma das 5 componentes da carga (Volume, Intensidade, Duração, Frequência e Densidade).</p>
-            </div>
-
-            {PRINCIPIOS_TREINAMENTO.principios.map((prin) => (
-              <div key={prin.id} className="print-card">
-                <h3>{prin.nome}</h3>
-                <p><strong>Conceito:</strong> {prin.conceitoReal}</p>
-                {prin.regraDeOuro && <p><strong>Regra de Ouro:</strong> {prin.regraDeOuro}</p>}
-                {prin.alerta && <p><strong>Alerta:</strong> {prin.alerta}</p>}
-              </div>
-            ))}
-
-            <div className="print-section-title">Biomecânica das Alavancas Articulares</div>
-            <table className="print-table">
-              <thead>
-                <tr>
-                  <th>Classe</th>
-                  <th>Função</th>
-                  <th>Configuração Mecânica</th>
-                  <th>Exemplo no Corpo</th>
-                  <th>Exercício na Academia</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ALAVANCAS_BIOMECANICAS.classes.map((alav) => (
-                  <tr key={alav.classe}>
-                    <td><strong>{alav.nome}</strong></td>
-                    <td>{alav.funcao}</td>
-                    <td>{alav.mecanica}</td>
-                    <td>{alav.exemploCorpo}</td>
-                    <td><strong>{alav.exemploAcademia}</strong></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            <div className="print-section-title">Populações Especiais & Segurança Clínica</div>
-            <div className="print-card">
-              <h3>1. Diabetes Mellitus (Tipo 1 e 2)</h3>
-              <p>• Não aplicar insulina no músculo que será exercitado (aumento de taxa de absorção).</p>
-              <p>• Ter sempre carboidrato de rápida absorção disponível no salão.</p>
-              <p>• Sintomas de hipoglicemia: sudorese fria, tremores, tontura e desorientação. Interromper o treino imediatamente.</p>
-            </div>
-            <div className="print-card">
-              <h3>2. Hipertensão Arterial Sistêmica (HAS)</h3>
-              <p>• PROIBIDA a Manobra de Valsalva (apneia durante a fase concêntrica) para evitar picos pressóricos perigosos.</p>
-              <p>• Evitar isometrias prolongadas e exercícios com pesos elevados acima da linha da cabeça em hipertensos sem controle.</p>
-              <p>• Hipotensão pós-esforço é o principal efeito cardioprotetor crônico da musculação controlada.</p>
-            </div>
+            <PrintVermelhaSection />
           </div>
         )}
 
         {/* IMPRESSÃO DO ATLAS DE MÚSCULOS */}
         {(selectedScope === 'muscles' || selectedScope === 'all') && (
           <div className={selectedScope === 'all' ? 'page-break' : ''}>
-            <div className="print-section-title">Atlas Anatômico: 12 Grupamentos Musculares</div>
-            <table className="print-table">
-              <thead>
-                <tr>
-                  <th>Músculo</th>
-                  <th>Região</th>
-                  <th>Composição / Fibras</th>
-                  <th>Ação Cinesiológica</th>
-                  <th>Plano</th>
-                  <th>Exercícios de Ativação</th>
-                </tr>
-              </thead>
-              <tbody>
-                {MUSCLES.map((m) => (
-                  <tr key={m.id}>
-                    <td><strong>{m.name}</strong></td>
-                    <td>{m.region}</td>
-                    <td>{m.composition}</td>
-                    <td>{m.action}</td>
-                    <td>{m.plane}</td>
-                    <td>{m.exercises.slice(0, 3).map(e => e.name).join(', ')}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <PrintMusclesSection />
           </div>
         )}
 
         <div className="print-footer">
-          CinesioFit App • Material Oficial de Estudos e Prescrição • Pratique Fitness & UniPower
+          CinesioFit Pro • Material Oficial de Estudos e Prescrição • Pratique Fitness & UniPower
         </div>
       </PrintableDocument>
     </>
