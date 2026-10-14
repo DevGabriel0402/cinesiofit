@@ -302,3 +302,306 @@ export const POPULACOES_ESPECIAIS = {
   diabetes: DIABETES_PRESCRICAO,
   hipertensao: HIPERTENSAO_PRESCRICAO
 };
+
+export const QUESTIONARIO_EXERCICIO_SAUDE = [
+  {
+    numero: 1,
+    pergunta: 'No jogo de peteca profissional, os pontos são disputados em intervalos de 30 segundos. Se não houver ponto, a equipe sacadora perde a vantagem para o adversário, que então pode sacar. Qual forma de treinamento seria mais apropriada para essa modalidade, considerando os princípios do treinamento?',
+    opcoes: [
+      'Sessões de 30 minutos de corrida contínua e musculação com séries curtas (menos de 10 repetições).',
+      'Musculação com séries longas (mais de 15 repetições), seguida de 30 minutos de corrida contínua.',
+      'Treino intervalado com tiros de velocidade de 15 segundos, seguidos de 3 minutos de recuperação ativa a 60% do VO₂ máximo.',
+      'Treino intervalado com estímulos de 30 segundos e densidade de 1:1.'
+    ],
+    respostaCorreta: 3,
+    gabarito: 'D',
+    explicacao: 'Pelo Princípio da Especificidade e densidade de esforço: estímulos com duração de 30 segundos associados a intervalos de recuperação proporcional (densidade 1:1) reproduzem com exatidão a bioenergética intermitente da modalidade.'
+  },
+  {
+    numero: 2,
+    pergunta: 'Uma pessoa matriculou-se numa academia para mudar a composição corporal. Após alguns meses sem perceber resultados, manteve a mesma prescrição de exercícios e saiu da academia. O profissional havia prescrito exercícios neuromusculares e cardiovasculares e informado que o programa mudaria em três meses. Como avaliar a conduta?',
+    opcoes: [
+      'Foi correta, pois mudar os componentes do treinamento com frequência aumenta o risco de lesão ou overtraining.',
+      'Foi correta, pois o corpo precisa de tempo para se adaptar ao estímulo do treinamento.',
+      'Foi incorreta, pois é recomendada uma avaliação física antes de mudar frequentemente os estímulos de treinamento.',
+      'Foi incorreta, pois a manipulação frequente do treinamento é necessária para evitar a estagnação e quebrar a homeostase.'
+    ],
+    respostaCorreta: 1,
+    gabarito: 'B',
+    explicacao: 'Princípio da Adaptação: o organismo necessita de um período basal sustentado (geralmente entre 8 e 12 semanas) para consolidar adaptações neuromusculares, hormonais e morfológicas antes de sofrer nova alteração estrutural no programa.'
+  },
+  {
+    numero: 3,
+    pergunta: 'Após 50 minutos de corrida contínua e perto do fim de uma prova, uma triatleta amadora aumenta drasticamente a velocidade para alcançar as adversárias, mas desiste poucos minutos depois. Do ponto de vista fisiológico, o que pode explicar o ocorrido?',
+    opcoes: [
+      'Ao aumentar a velocidade, esgotou as reservas remanescentes de gordura e ficou sem substrato energético para continuar.',
+      'Ultrapassou a intensidade sustentável por tempo prolongado, com maior contribuição anaeróbia e acúmulo de metabólitos associados à fadiga.',
+      'Não estava psicologicamente preparada e desistiu ao perceber que não alcançaria as adversárias.',
+      'O ATP não pôde ser ressintetizado porque não havia grupos fosfato suficientes.'
+    ],
+    respostaCorreta: 1,
+    gabarito: 'B',
+    explicacao: 'Ao disparar a intensidade no final da prova, o limiar anaeróbio foi ultrapassado bruscamente. A demanda energética passou para a via glicolítica rápida, acumulando íons H+ e metabólitos que causam acidose e fadiga neuromuscular imediata.'
+  },
+  {
+    numero: 4,
+    pergunta: 'O dispêndio energético pode ser expresso em METs, que comparam a taxa metabólica de uma atividade com a de repouso. Uma atividade de 10 METs é considerada de intensidade:',
+    opcoes: [
+      'Leve (< 3 METs).',
+      'Moderada (3 a 5.9 METs).',
+      'Vigorosa (≥ 6 METs).',
+      'Amena.'
+    ],
+    respostaCorreta: 2,
+    gabarito: 'C',
+    explicacao: 'Classificação oficial de METs: Atividades Leves (< 3 METs), Moderadas (3,0 a 5,9 METs) e Vigorosas (≥ 6 METs). 10 METs representa um esforço dez vezes maior que o repouso basal, classificado firmemente como intensidade vigorosa.'
+  },
+  {
+    numero: 5,
+    pergunta: 'Um cliente iniciante pede para aumentar os pesos nos exercícios. O profissional decide manter a carga e aumentar as repetições em cada série. Do ponto de vista dos princípios do treinamento, que sobrecarga foi aplicada?',
+    opcoes: [
+      'Na intensidade do treinamento.',
+      'No volume do treinamento.',
+      'Na duração do treinamento.',
+      'Nenhuma: aumentar as repetições não representa uma sobrecarga.'
+    ],
+    respostaCorreta: 1,
+    gabarito: 'B',
+    explicacao: 'Princípio da Sobrecarga e Progressão: O aumento no número de repetições ou séries incide diretamente no Volume de treino. A intensidade só é alterada quando se modifica o peso (kg), percentual de 1RM ou velocidade de execução.'
+  },
+  {
+    numero: 6,
+    pergunta: 'Na biomecânica, um profissional pode aumentar ou diminuir o trabalho muscular manipulando o braço de resistência. Qual alternativa define melhor esse conceito?',
+    opcoes: [
+      'Distância do ponto fixo até o ponto de aplicação da força potente.',
+      'Distância linear do eixo até o ponto de inserção do músculo motor primário.',
+      'Distância perpendicular do ponto fixo (eixo) até a linha de aplicação da resistência.',
+      'Comprimento total do braço de alavanca óssea.'
+    ],
+    respostaCorreta: 2,
+    gabarito: 'C',
+    explicacao: 'Definição física e biomecânica do Braço de Resistência (BR): é a menor distância perpendicular medida entre o eixo de rotação articular (ponto fixo) e a linha de ação do vetor de força da resistência externa.'
+  },
+  {
+    numero: 7,
+    pergunta: 'Na elevação lateral com halteres, a abdução dos ombros no plano frontal fica mais fácil com os cotovelos flexionados do que com eles estendidos, usando o mesmo peso. Por quê?',
+    opcoes: [
+      'Porque o praticante consegue compensar com um movimento "roubado".',
+      'Por causa da diminuição do braço de resistência.',
+      'Por causa do aumento do braço de força.',
+      'Por mudança no eixo do movimento.'
+    ],
+    respostaCorreta: 1,
+    gabarito: 'B',
+    explicacao: 'Ao flexionar os cotovelos a 90°, o haltere (carga) aproxima-se horizontalmente do eixo glenoumeral (ombro), encurtando o Braço de Resistência (BR) e reduzindo o torque resistente imposto ao deltoide lateral.'
+  },
+  {
+    numero: 8,
+    pergunta: 'Para um praticante iniciante, o abdominal supra é feito com os braços cruzados sobre o peito. Como se justifica essa posição?',
+    opcoes: [
+      'Maior facilidade por deslocar o centro de gravidade.',
+      'Maior facilidade por reduzir a amplitude do movimento.',
+      'Menor braço de resistência.',
+      'Maior braço de força.'
+    ],
+    respostaCorreta: 2,
+    gabarito: 'C',
+    explicacao: 'Braços cruzados sobre o peito aproximam a massa dos membros superiores do eixo de rotação da coluna lombar/torácica, reduzindo o Braço de Resistência (BR) e facilitando a flexão de tronco pelo reto abdominal.'
+  },
+  {
+    numero: 9,
+    pergunta: 'Para um praticante bem condicionado, o abdominal supra é feito com os braços estendidos acima da cabeça. Como se justifica essa posição?',
+    opcoes: [
+      'Maior facilidade por deslocar o centro de gravidade.',
+      'Maior facilidade por reduzir a amplitude do movimento.',
+      'Maior braço de resistência.',
+      'Menor braço de força.'
+    ],
+    respostaCorreta: 2,
+    gabarito: 'C',
+    explicacao: 'Alongar os braços acima da cabeça afasta o centro de massa dos membros superiores para longe do eixo lombar, maximizando o Braço de Resistência (BR) e exigindo muito maior tensão das fibras do reto abdominal.'
+  },
+  {
+    numero: 10,
+    pergunta: 'O diabetes é uma doença cuja característica principal é o excesso de glicose no sangue (hiperglicemia). Isso pode ocorrer porque:',
+    opcoes: [
+      'O indivíduo não consegue metabolizar os carboidratos ingeridos.',
+      'O indivíduo tem compulsão por alimentos açucarados.',
+      'O corpo não produz insulina ou não consegue usar adequadamente a insulina que produz.',
+      'Todo carboidrato ingerido se transforma em açúcar.'
+    ],
+    respostaCorreta: 2,
+    gabarito: 'C',
+    explicacao: 'Fisiopatologia do Diabetes: decorre da deficiência absoluta na produção de insulina pelas células beta pancreáticas (Tipo 1) ou da resistência periférica à sua ação nos receptores teciduais (Tipo 2).'
+  },
+  {
+    numero: 11,
+    pergunta: 'O que é a insulina?',
+    opcoes: [
+      'Substância capaz de quebrar o açúcar dentro da célula.',
+      'Enzima que acelera o metabolismo dos carboidratos.',
+      'Hormônio produzido pelo pâncreas que ajuda a regular a glicose no sangue.',
+      'Catalisador bioquímico que oxida carboidratos e açúcares.'
+    ],
+    respostaCorreta: 2,
+    gabarito: 'C',
+    explicacao: 'A insulina é um hormônio anabólico de natureza proteica sintetizado nas células beta das ilhotas de Langerhans no pâncreas, essencial para a translocação dos transportadores GLUT-4 e captação celular de glicose.'
+  },
+  {
+    numero: 12,
+    pergunta: 'Quais são os dois tipos mais comuns de diabetes e a explicação correta de cada tipo?',
+    opcoes: [
+      'Tipo A (dependente de insulina) e Tipo B (não insulinodependente).',
+      'Tipo 1 (o corpo não produz insulina) e Tipo 2 (o corpo produz insulina, mas não consegue usá-la adequadamente).',
+      'Tipo Ia (catabólico) e Tipo Ib (anabólico).',
+      'Tipo IIa (não associado à tireoide) e Tipo IIb (associado à tireoide).'
+    ],
+    respostaCorreta: 1,
+    gabarito: 'B',
+    explicacao: 'Tipo 1 é uma doença autoimune com destruição das células produtoras de insulina. Tipo 2 (>90% dos casos) associa-se à obesidade e sedentarismo, cursando com resistência insulínica celular ("fechadura enferrujada").'
+  },
+  {
+    numero: 13,
+    pergunta: 'Como a prática de atividade física pode ajudar uma pessoa com diabetes?',
+    opcoes: [
+      'Ajudando na beta-oxidação das gorduras e evitando o excesso de peso.',
+      'Através da melhora do metabolismo e da eficiência energética.',
+      'Por meio da queda da pressão arterial e da frequência cardíaca de repouso.',
+      'A contração muscular aumenta a captação e o uso de glicose pelos músculos independentemente de insulina, auxiliando no controle glicêmico.'
+    ],
+    respostaCorreta: 3,
+    gabarito: 'D',
+    explicacao: 'Durante a contração muscular, a via mecânica e o aumento de cálcio e AMPK ativam o GLUT-4 diretamente, fazendo o músculo captar glicose da circulação mesmo na ausência ou falha da insulina.'
+  },
+  {
+    numero: 14,
+    pergunta: 'Segundo os protocolos de controle glicêmico no exercício, qual a conduta para um aluno diabético com glicemia pré-treino superior a 200 mg/dL?',
+    opcoes: [
+      'Não se exercitar em hipótese alguma nesse dia.',
+      'Esperar apenas 10 minutos antes de começar a sessão.',
+      'Caso faça aplicação de insulina de ação rápida para correção, aguardar cerca de 90 minutos para evitar choque hipoglicêmico.',
+      'Aplicar insulina ultrarrápida por conta própria sem prescrição médica.'
+    ],
+    respostaCorreta: 2,
+    gabarito: 'C',
+    explicacao: 'Aguardar 90 minutos após a aplicação de insulina rápida permite que o pico farmacológico inicial se dissipe, impedindo que a ação exógena coincida sinergicamente com a captação mecânica do exercício, evitando hipoglicemia severa.'
+  },
+  {
+    numero: 15,
+    pergunta: 'O que caracteriza a hipertensão arterial sistêmica (pressão alta)?',
+    opcoes: [
+      'Aumento da força dos batimentos cardíacos em repouso.',
+      'Aumento anormal e prolongado da pressão que o sangue exerce nas paredes das artérias ao circular pelo corpo.',
+      'Elevação da pressão alveolar dentro dos pulmões.',
+      'Elevação da força de retorno do sangue venoso ao coração.'
+    ],
+    respostaCorreta: 1,
+    gabarito: 'B',
+    explicacao: 'A hipertensão é uma doença cardiovascular crônica caracterizada por níveis sustentados de pressão sistólica ≥ 140 mmHg e/ou diastólica ≥ 90 mmHg (pela SBC), elevando a pós-carga e a resistência vascular.'
+  },
+  {
+    numero: 16,
+    pergunta: 'Sobre atividade física, hipertensão arterial e diretrizes do ACSM / AHA, assinale a afirmação correta:',
+    opcoes: [
+      'Exercícios resistidos (musculação) são perigosos e totalmente proibidos para pessoas hipertensas.',
+      'Tanto exercícios cardiovasculares quanto resistidos promovem reduções pressóricas clinicamente equivalentes e são recomendados de forma combinada.',
+      'Apenas caminhadas em ritmo lento conseguem diminuir a pressão arterial.',
+      'Exercícios de musculação não possuem nenhum impacto no controle pressórico crônico.'
+    ],
+    respostaCorreta: 1,
+    gabarito: 'B',
+    explicacao: 'Revisões do ACSM e diretrizes da Sociedade Brasileira de Cardiologia confirmam que tanto o treinamento aeróbico quanto a musculação reduzem a PA de 3 a 5 mmHg de forma clinicamente equivalente e complementar.'
+  },
+  {
+    numero: 17,
+    pergunta: 'Qual alternativa representa o princípio básico sugerido pela metodologia UniPower para orientar a prescrição inicial de exercícios para a saúde em geral?',
+    opcoes: [
+      'Mais rápido, mais alto, mais forte (Citius, Altius, Fortius).',
+      'No pain, no gain (sem dor, sem ganho).',
+      'Go hard or go home (treine pesado ou vá para casa).',
+      'PSF: Pouco, Simples e Fácil.'
+    ],
+    respostaCorreta: 3,
+    gabarito: 'D',
+    explicacao: 'Método PSF (Pouco, Simples e Fácil): prescreve estímulos na zona de conforto e segurança (PSE ≤ 4 a 5), priorizando a adesão, a segurança articular e o hábito diário antes de impor intensidade.'
+  },
+  {
+    numero: 18,
+    pergunta: 'Na avaliação por bioimpedância corporal, o indicador SMI (Skeletal Muscle Index) refere-se a:',
+    opcoes: [
+      'A massa corporal magra total com água intracelular.',
+      'A saúde ou quantidade proporcional de massa muscular esquelética apendicular.',
+      'A perda severa e irreversível de gordura corporal.',
+      'A massa gorda visceral segmentar.'
+    ],
+    respostaCorreta: 1,
+    gabarito: 'B',
+    explicacao: 'O SMI (Índice de Músculo Esquelético) quantifica a massa muscular apendicular dividida pela altura ao quadrado (kg/m²), sendo padrão-ouro na identificação e monitoramento de sarcopenia.'
+  },
+  {
+    numero: 19,
+    pergunta: 'A relação cintura-quadril (RCQ) e a gordura visceral guardam relação direta com o risco cardiovascular. O que isso significa?',
+    opcoes: [
+      'A probabilidade de infarto ou AVC tende a aumentar quando a RCQ e a gordura visceral aumentam.',
+      'Quanto maiores os valores de gordura abdominal profunda, maior a resistência vascular e marcadores inflamatórios.',
+      'Valores elevados correlacionam-se com maior incidência de eventos coronarianos e síndrome metabólica.',
+      'Todas as alternativas anteriores estão corretas.'
+    ],
+    respostaCorreta: 3,
+    gabarito: 'D',
+    explicacao: 'O tecido adiposo visceral é metabolicamente ativo, secretando citocinas pró-inflamatórias que aumentam a aterogênese, a pressão arterial e a incidência de infartos e AVC.'
+  },
+  {
+    numero: 21,
+    pergunta: 'Para que foi criado o sistema CORE-PAC na metodologia de atendimento e supervisão da Rede Pratique Fitness?',
+    opcoes: [
+      'Diminuir a área de varredura do profissional para identificar apenas alunos lesionados.',
+      'Garantir profissionais circulando ativamente e prontos para intervir em todas as áreas, para que nenhum aluno se sinta desamparado.',
+      'Propiciar o rodízio obrigatório de professores a cada 15 minutos para atender outros setores.',
+      'Registrar o tempo de treino dos alunos em catracas eletrônicas.'
+    ],
+    respostaCorreta: 1,
+    gabarito: 'B',
+    explicacao: 'O CORE (Circular, Oportunidade, Restaurar, Elogiar) e PAC (Postura, Amplitude, Cadência) estruturam a presença constante do professor no salão, acolhendo iniciantes e prevenindo falhas de execução.'
+  },
+  {
+    numero: 22,
+    pergunta: 'Quando um aluno pede orientação sobre um exercício localizado fora do setor em que o professor está escalado, qual é o procedimento correto?',
+    opcoes: [
+      'Sair do próprio setor imediatamente e deixar os outros alunos sem supervisão.',
+      'Chamar o colega no rádio e dizer apenas o primeiro nome do aluno.',
+      'Encaminhar o aluno ao setor adequado e avisar o colega pelo rádio, explicando a demanda técnica e identificando o aluno.',
+      'Dizer que não pode sair do setor e pedir ao aluno que procure outro professor sozinho.'
+    ],
+    respostaCorreta: 2,
+    gabarito: 'C',
+    explicacao: 'Padrão de excelência no atendimento Pratique: comunicação via rádio com clareza, direcionando o aluno ao colega responsável com presteza e garantindo que o atendimento não seja interrompido.'
+  },
+  {
+    numero: 23,
+    pergunta: 'No exercício de Puxada Alta (Lat Pulldown), qual análise cinesiológica descreve corretamente o movimento articular e muscular?',
+    opcoes: [
+      'Adução do ombro no plano transverso e peitoral como motor primário.',
+      'Abdução do ombro no plano transverso com tríceps como motor primário.',
+      'Adução de ombro e flexão de cotovelos no plano frontal; latíssimo do dorso como motor primário e bíceps braquial como sinergista.',
+      'Extensão de ombro e extensão de cotovelos no plano frontal com deltoide anterior.'
+    ],
+    respostaCorreta: 2,
+    gabarito: 'C',
+    explicacao: 'Na puxada frontal pegada aberta, os braços aproximam-se do tronco no Plano Frontal (Adução de Ombro mobilizada pelo Latíssimo do Dorso) acompanhada de Flexão de Cotovelo assistida pelo Bíceps Braquial.'
+  },
+  {
+    numero: 24,
+    pergunta: 'Para substituir a Puxada Alta tradicional em um treino, qual exercício apresenta maior equivalência cinesiológica e de plano?',
+    opcoes: [
+      'Remada baixa no crossover (Plano Sagital).',
+      'Remada curvada com halteres (Plano Sagital).',
+      'Puxada na barra com pegada supinada fechada.',
+      'Puxada no Graviton com pegada pronada aberta (ou Barra Fixa Pronada Aberta).'
+    ],
+    respostaCorreta: 3,
+    gabarito: 'D',
+    explicacao: 'A Barra Fixa Pronada Aberta ou no Graviton mantém rigorosamente o mesmo vetor vertical de tração, plano frontal de adução glenoumeral e ativação primária do latíssimo do dorso.'
+  }
+];
+

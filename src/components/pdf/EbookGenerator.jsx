@@ -398,8 +398,23 @@ const PrintableDocument = styled.div`
     }
 
     .page-break {
-      page-break-before: always;
-      break-before: page;
+      page-break-before: always !important;
+      break-before: page !important;
+    }
+
+    .force-page-break {
+      display: block !important;
+      clear: both !important;
+      page-break-after: always !important;
+      break-after: page !important;
+      page-break-before: always !important;
+      break-before: page !important;
+      height: 0 !important;
+      min-height: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      visibility: hidden;
     }
 
     .avoid-break {
@@ -408,12 +423,21 @@ const PrintableDocument = styled.div`
     }
 
     /* ── CAPA DE IMPRESSÃO ── */
+    .print-cover-page {
+      display: block !important;
+      page-break-after: always !important;
+      break-after: page !important;
+      min-height: 96vh;
+      box-sizing: border-box;
+      margin-bottom: 2rem;
+    }
+
     .print-cover {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      min-height: 88vh;
+      min-height: 92vh;
       text-align: center;
       border: 2px solid #e2e8f0;
       border-radius: 12px;
@@ -421,6 +445,8 @@ const PrintableDocument = styled.div`
       position: relative;
       background: #fafafa;
       box-sizing: border-box;
+      page-break-after: always !important;
+      break-after: page !important;
     }
 
     .cover-stripe {
@@ -1038,8 +1064,8 @@ export const EbookGenerator = ({ onSelectScope }) => {
       bgColor: '#fff1f2',
       icon: Award,
       badge: 'Nível 2 UniPower',
-      topics: ['Princípios do Treino', 'SAG (Selye)', 'Alavancas (Torque/BR)', 'Diabetes & HAS'],
-      count: 'Princípios + Alavancas + Clínica'
+      topics: ['Princípios do Treino', 'SAG (Selye)', 'Alavancas (Torque/BR)', 'Diabetes & HAS', 'Questionário Saúde (22 Qs)'],
+      count: 'Princípios + Alavancas + Clínica + Questionário Oficial'
     },
     {
       id: 'muscles',
@@ -1290,6 +1316,13 @@ export const EbookGenerator = ({ onSelectScope }) => {
                   </div>
                   <span className="row-detail">31 questões oficiais com respostas corretas e justificativas científicas</span>
                 </div>
+                <div className="content-row">
+                  <div className="row-title">
+                    <BookOpen size={18} color="#e11d48" />
+                    <span>Questionário: Exercício Físico e Saúde</span>
+                  </div>
+                  <span className="row-detail">22 questões oficiais com gabarito assinalado e justificativa científica</span>
+                </div>
               </>
             )}
 
@@ -1358,6 +1391,9 @@ export const EbookGenerator = ({ onSelectScope }) => {
           color={currentScopeObj.color}
           topics={currentScopeObj.topics}
         />
+
+        {/* FORÇA QUEBRA DE PÁGINA APÓS A CAPA */}
+        <div className="force-page-break" />
 
         {/* IMPRESSÃO DA PULSEIRA VERDE */}
         {(selectedScope === 'verde' || selectedScope === 'all') && (

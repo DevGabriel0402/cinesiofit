@@ -9,7 +9,8 @@ import {
   PRINCIPIOS_TREINAMENTO, 
   BIOMECANICA_ALAVANCAS,
   DIABETES_PRESCRICAO,
-  HIPERTENSAO_PRESCRICAO
+  HIPERTENSAO_PRESCRICAO,
+  QUESTIONARIO_EXERCICIO_SAUDE
 } from '../../dataPulseiraVermelha';
 import { QUIZ_QUESTIONS } from '../../quizData';
 
@@ -659,6 +660,52 @@ const PulseiraVermelhaPages = () => (
       </Text>
       {QUIZ_QUESTIONS.filter(q => q.category === 'Pulseira Vermelha').map((q, idx) => (
         <PdfQuizCard key={q.id} q={q} index={idx} color="#e11d48" />
+      ))}
+      <Footer scopeName="Pulseira Vermelha" />
+    </Page>
+
+    {/* ── Questionário Oficial: Exercício Físico e Saúde ── */}
+    <Page size="A4" style={s.page}>
+      <View style={[s.sectionHeader, { borderBottomColor: '#be123c' }]}>
+        <Text style={s.sectionTitle}>Questionário: Exercício Físico e Saúde</Text>
+        <Text style={[s.sectionBadge, { backgroundColor: '#be123c' }]}>UNIPOWER OFICIAL</Text>
+      </View>
+      <Text style={{ fontSize: 7.5, color: '#475569', marginBottom: 6 }}>
+        Questões oficiais de Exercício Físico e Saúde com gabarito assinalado e justificativa científica.
+      </Text>
+      {QUESTIONARIO_EXERCICIO_SAUDE.map((item) => (
+        <View key={item.numero} style={[s.card, { marginBottom: 6, padding: '6 8' }]} wrap={false}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 2 }}>
+            <Text style={{ fontSize: 7, fontWeight: 'bold', color: '#be123c', backgroundColor: '#ffe4e6', padding: '1 5', borderRadius: 3 }}>
+              Questão {item.numero}
+            </Text>
+            <Text style={{ fontSize: 6.5, color: '#64748b', fontWeight: 'bold' }}>Exercício Físico e Saúde</Text>
+          </View>
+          <Text style={{ fontSize: 7.5, fontWeight: 'bold', color: '#0f172a', marginBottom: 3, lineHeight: 1.25 }}>
+            {item.pergunta}
+          </Text>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 4, marginBottom: 3 }}>
+            {item.opcoes.map((opt, oi) => {
+              const isCorrect = oi === item.respostaCorreta;
+              return (
+                <View key={oi} style={{ width: '48%', flexDirection: 'row', alignItems: 'center', backgroundColor: isCorrect ? '#f0fdf4' : '#ffffff', borderWidth: 0.5, borderColor: isCorrect ? '#86efac' : '#e2e8f0', borderRadius: 3, padding: '2 4' }}>
+                  <Text style={{ fontSize: 6.5, fontWeight: 'bold', color: isCorrect ? '#047857' : '#64748b', width: 12 }}>
+                    {OPT_LETTERS[oi]}
+                  </Text>
+                  <Text style={{ fontSize: 6, color: isCorrect ? '#047857' : '#334155', fontWeight: isCorrect ? 'bold' : 'normal', flex: 1, lineHeight: 1.2 }}>
+                    {opt} {isCorrect ? '✓' : ''}
+                  </Text>
+                </View>
+              );
+            })}
+          </View>
+          {item.explicacao && (
+            <View style={{ backgroundColor: '#f8fafc', borderLeftWidth: 2, borderLeftColor: '#be123c', padding: '2 5' }}>
+              <Text style={{ fontSize: 6, color: '#be123c', fontWeight: 'bold' }}>💡 Gabarito: {item.gabarito} • Justificativa:</Text>
+              <Text style={{ fontSize: 6, color: '#334155', lineHeight: 1.25 }}>{item.explicacao}</Text>
+            </View>
+          )}
+        </View>
       ))}
       <Footer scopeName="Pulseira Vermelha" />
     </Page>

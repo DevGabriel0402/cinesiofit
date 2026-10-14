@@ -20,7 +20,8 @@ import {
   BIOMECANICA_ALAVANCAS, 
   ALAVANCAS_BIOMECANICAS,
   DIABETES_PRESCRICAO, 
-  HIPERTENSAO_PRESCRICAO 
+  HIPERTENSAO_PRESCRICAO,
+  QUESTIONARIO_EXERCICIO_SAUDE
 } from '../../dataPulseiraVermelha';
 import { MUSCLES, PLANES, MOVEMENTS } from '../../data';
 import { QUIZ_QUESTIONS } from '../../quizData';
@@ -83,38 +84,41 @@ export const PrintQuizItem = ({ q, index, accentColor = '#10b981' }) => {
  * ───────────────────────────────────────────────────────────── */
 export const PrintCover = ({ title, subtitle, badge, color = '#10b981', topics = [] }) => {
   return (
-    <div className="print-cover page-break">
-      <div className="cover-stripe" style={{ backgroundColor: color }} />
-      <div className="cover-header-brand">
-        <span className="brand-logo">PRATIQUE FITNESS • UNIPOWER</span>
-        <span className="brand-sub">Manual Oficial de Capacitação & Validação Prática</span>
-      </div>
-
-      <div className="cover-body">
-        <div className="cover-badge" style={{ borderColor: color, color: color }}>
-          {badge}
+    <div className="print-cover-page">
+      <div className="print-cover">
+        <div className="cover-stripe" style={{ backgroundColor: color }} />
+        <div className="cover-header-brand">
+          <span className="brand-logo">PRATIQUE FITNESS • UNIPOWER</span>
+          <span className="brand-sub">Manual Oficial de Capacitação & Validação Prática</span>
         </div>
-        <h1 className="cover-title" style={{ color: '#0f172a' }}>{title}</h1>
-        <p className="cover-subtitle">{subtitle}</p>
 
-        <div className="cover-topics-box">
-          <span className="topics-title">Conteúdo Programático Incluso:</span>
-          <div className="topics-grid">
-            {topics.map((t, idx) => (
-              <div key={idx} className="topic-pill">
-                <span className="pill-dot" style={{ backgroundColor: color }} />
-                <span>{t}</span>
-              </div>
-            ))}
+        <div className="cover-body">
+          <div className="cover-badge" style={{ borderColor: color, color: color }}>
+            {badge}
+          </div>
+          <h1 className="cover-title" style={{ color: '#0f172a' }}>{title}</h1>
+          <p className="cover-subtitle">{subtitle}</p>
+
+          <div className="cover-topics-box">
+            <span className="topics-title">Conteúdo Programático Incluso:</span>
+            <div className="topics-grid">
+              {topics.map((t, idx) => (
+                <div key={idx} className="topic-pill">
+                  <span className="pill-dot" style={{ backgroundColor: color }} />
+                  <span>{t}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="cover-footer-meta">
-        <div><strong>Coordenação Técnica:</strong> Prof. Cleverson Costa & Time UniPower</div>
-        <div><strong>Material Pedagógico:</strong> CinesioFit Pro • Exercícios com Gabarito e Explicações</div>
-        <div className="cover-date">Documento Oficial para Impressão & Prancheta A4</div>
+        <div className="cover-footer-meta">
+          <div><strong>Coordenação Técnica:</strong> Prof. Cleverson Costa & Time UniPower</div>
+          <div><strong>Material Pedagógico:</strong> CinesioFit Pro • Exercícios com Gabarito e Explicações</div>
+          <div className="cover-date">Documento Oficial para Impressão & Prancheta A4</div>
+        </div>
       </div>
+      <div className="force-page-break" />
     </div>
   );
 };
@@ -132,9 +136,9 @@ export const PrintVerdeSection = () => {
   );
 
   return (
-    <div className="print-section-wrapper">
+    <div className="print-section-wrapper" style={{ pageBreakBefore: 'always', breakBefore: 'page' }}>
       {/* 1. ESTUDO TEÓRICO: BIOENERGÉTICA */}
-      <div className="section-title-banner verde-theme">
+      <div className="section-title-banner verde-theme page-break">
         <Zap size={18} />
         <span>1. Estudo Teórico: Bioenergética e Sistemas Energéticos</span>
       </div>
@@ -333,9 +337,9 @@ export const PrintVermelhaSection = () => {
   const vermelhaQuestions = QUIZ_QUESTIONS.filter(q => q.category === 'Pulseira Vermelha');
 
   return (
-    <div className="print-section-wrapper">
+    <div className="print-section-wrapper" style={{ pageBreakBefore: 'always', breakBefore: 'page' }}>
       {/* 1. PRINCÍPIOS DO TREINAMENTO FÍSICO */}
-      <div className="section-title-banner vermelha-theme">
+      <div className="section-title-banner vermelha-theme page-break">
         <Award size={18} />
         <span>1. Princípios do Treinamento Físico & Síndrome de Adaptação Geral</span>
       </div>
@@ -733,6 +737,106 @@ export const PrintVermelhaSection = () => {
           />
         ))}
       </div>
+
+      {/* 7. QUESTIONÁRIO OFICIAL: EXERCÍCIO FÍSICO E SAÚDE */}
+      <div className="section-title-banner vermelha-theme page-break" style={{ marginTop: '28px' }}>
+        <BookOpen size={18} />
+        <span>7. Questionário Oficial: Exercício Físico e Saúde</span>
+      </div>
+      <p className="section-intro-text">
+        As alternativas corretas estão destacadas em verde e identificadas com ✓. 
+        Os itens seguem a numeração original das capturas da avaliação oficial da UniPower. 
+        (Obs.: As questões 20 e 25 não constam por ilegibilidade das imagens de origem).
+      </p>
+
+      <div className="quiz-print-container">
+        {QUESTIONARIO_EXERCICIO_SAUDE.map((item) => (
+          <div key={item.numero} className="print-quiz-card avoid-break">
+            <div className="quiz-card-head">
+              <span className="quiz-badge" style={{ backgroundColor: '#e11d48' }}>
+                Questão {item.numero}
+              </span>
+              <span className="quiz-category">Exercício Físico e Saúde</span>
+            </div>
+
+            <div className="quiz-question-text">
+              <strong>{item.pergunta}</strong>
+            </div>
+
+            <div className="quiz-options-list">
+              {item.opcoes.map((opt, optIdx) => {
+                const isCorrect = optIdx === item.respostaCorreta;
+                return (
+                  <div 
+                    key={optIdx} 
+                    className={`quiz-option-item ${isCorrect ? 'correct-option' : ''}`}
+                  >
+                    <span className={`option-letter ${isCorrect ? 'letter-correct' : ''}`}>
+                      {OPT_LETTERS[optIdx]}
+                    </span>
+                    <span className="option-text">
+                      {opt}
+                    </span>
+                    {isCorrect && (
+                      <span className="correct-tag">✓ Resposta Correta</span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="quiz-explanation-box">
+              <div className="explanation-title">
+                <span>💡 Gabarito: {item.gabarito} • Justificativa Científica:</span>
+              </div>
+              <p className="explanation-desc">{item.explicacao}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* GABARITO RESUMIDO */}
+      <div className="avoid-break" style={{ marginTop: '16px' }}>
+        <span style={{ fontSize: '9pt', fontWeight: 'bold', color: '#0f172a' }}>
+          Tabela Resumo de Gabarito: Exercício Físico e Saúde
+        </span>
+        <table className="print-table" style={{ marginTop: '6px' }}>
+          <thead>
+            <tr>
+              {QUESTIONARIO_EXERCICIO_SAUDE.slice(0, 11).map(q => (
+                <th key={q.numero} style={{ textAlign: 'center', padding: '4px' }}>Q{q.numero}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {QUESTIONARIO_EXERCICIO_SAUDE.slice(0, 11).map(q => (
+                <td key={q.numero} style={{ textAlign: 'center', fontWeight: 'bold', color: '#be123c', padding: '4px' }}>
+                  {q.gabarito}
+                </td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+        <table className="print-table" style={{ marginTop: '4px' }}>
+          <thead>
+            <tr>
+              {QUESTIONARIO_EXERCICIO_SAUDE.slice(11).map(q => (
+                <th key={q.numero} style={{ textAlign: 'center', padding: '4px' }}>Q{q.numero}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {QUESTIONARIO_EXERCICIO_SAUDE.slice(11).map(q => (
+                <td key={q.numero} style={{ textAlign: 'center', fontWeight: 'bold', color: '#be123c', padding: '4px' }}>
+                  {q.gabarito}
+                </td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
@@ -742,8 +846,8 @@ export const PrintVermelhaSection = () => {
  * ───────────────────────────────────────────────────────────── */
 export const PrintMusclesSection = () => {
   return (
-    <div className="print-section-wrapper">
-      <div className="section-title-banner dark-theme">
+    <div className="print-section-wrapper" style={{ pageBreakBefore: 'always', breakBefore: 'page' }}>
+      <div className="section-title-banner dark-theme page-break">
         <Activity size={18} />
         <span>Atlas Cinesiológico: 12 Grupamentos Musculares</span>
       </div>
